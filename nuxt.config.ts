@@ -1,0 +1,30 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
+  compatibilityDate: '2024-04-03',
+  devtools: { enabled: true },
+  modules: [
+    '@nuxt/image',
+    '@pinia/nuxt',
+    'nuxt-svgo',
+    '@nuxtjs/google-fonts',
+    '@nuxt/ui'
+  ],
+  pinia: {
+    storesDirs: ['./stores/**'],
+  },
+  image: {
+    quality: 80,
+    dir: 'assets/images',
+  },
+  svgo: {
+    componentPrefix: 'i',
+    autoImportPath: './assets/icons/',
+  },
+  googleFonts: {
+    families: {
+      'Source Sans 3': '100..700',
+      Rubik: [500],
+      Poppins: [700],
+    }
+  }
+})

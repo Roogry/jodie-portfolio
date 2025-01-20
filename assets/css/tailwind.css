@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Source Sans 3", sans-serif;
+    @apply text-secondary;
+  }
+
+  body {
+    background-color: #F9F9F9;
+  }
+
+  h1, h2 {
+    font-family: "Rubik", sans-serif;
+    @apply text-black
+  }
+}
