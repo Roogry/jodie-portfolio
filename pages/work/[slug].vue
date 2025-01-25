@@ -9,7 +9,7 @@
             <h1 class="text-3xl font-medium lg:text-5xl sm:text-4xl">{{ portfolio.name }}</h1>
             <p class="mt-4 mb-6 text-base text-secondary sm:text-xl">{{ portfolio.description }}</p>
             
-            <NuxtLink v-if="portfolio.visitUrl" :to="portfolio.visitUrl" target="_blank" class="font-semibold text-lg sm:text-xl">
+            <NuxtLink v-if="portfolio.visitUrl" :to="portfolio.visitUrl" target="_blank" class="group font-semibold text-lg sm:text-xl">
               <div class="h-full inline-flex gap-3 items-center justify-start">
                 <p class="text-secondary group-hover:text-blue-700">View Result</p>
                 <span
@@ -77,11 +77,9 @@
     <section id="footer" class="mt-20 sm:mt-40">
       <Footer is-mini-ver />
     </section>
-
-    <NuxtImg class="absolute max-w-[1652px] -z-30 top-[-500px] left-[-1000px]"
-          src="/decorations/circular-radial-gradient-blue.png" placeholder/>
-    <NuxtImg class="absolute max-w-[750px] rotate-[120deg] -z-30 top-[800px] right-[-300px]"
-          src="/decorations/top-pie-gradient-blue.png" placeholder/>
+    
+    <span class="opacity-60 particle-circular particle-origin-top-left particle-animate-rotate top-[-20vmax] left-[-90vmax] sm:top-[-20vmax] sm:left-[-80vmax]"></span>
+    <span class="opacity-40 particle-sm particle-circular particle-origin-bottom-right particle-animate-rotate top-[20vmax] right-[-90vmax] sm:top-[30vmax] sm:right-[-80vmax]"></span>
   </div>
 </template>
 
@@ -114,5 +112,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+@use "~/assets/scss/bg-animate.scss";
 </style>

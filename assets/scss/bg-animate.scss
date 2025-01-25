@@ -16,13 +16,19 @@ $particleSize: 100vmax;
 }
 
 .particle-origin-top-left {
-  transform-origin: 60vmax 40vmax;
+  transform-origin: 60% 40%;
   animation-duration: calc(math.random(6 * 10) / 10) * 1s + 10s;
 }
 
 .particle-origin-bottom-right {
-  transform-origin: 40vmax 60vmax;
+  transform-origin: 40% 60%;
   animation-duration: calc(math.random(6 * 10) / 10) * 1s + 10s;
+}
+
+$smParticleSize: 50vmax;
+.particle-sm {
+  width: $particleSize;
+  height: $particleSize;
 }
 
 .particle-animate-rotate {
