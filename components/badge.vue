@@ -1,6 +1,6 @@
 <template>
   <div :class="cn(badgeVariants({ variant }), props.class)">
-    <div class="px-4 py-2">
+    <div class="px-3 py-2">
       <slot />
     </div>
   </div>
@@ -18,6 +18,7 @@ const badgeVariants = cva(
       variant: {
         default: "border-gray-400",
         colored: "border-blue-300/60 bg-blue-100 text-blue-700 backdrop-blur-md",
+        blur: "border-gray-400/60 bg-white/50 backdrop-blur-md",
       },
     },
     defaultVariants: {
