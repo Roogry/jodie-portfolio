@@ -8,8 +8,8 @@
         </div>
       </div>
 
-      <div v-else class="flex gap-1 items-center justify-center">
-        <p class="text-lg font-semibold">Drop hello through : </p>
+      <div v-else class="flex flex-col gap-1 items-center justify-center sm:flex-row">
+        <p class="text-base sm:text-lg sm:font-semibold">Drop hello through : </p>
         <p class="text-lg font-semibold text-black">jodiemantra@gmail.com</p>
       </div>
 
@@ -33,7 +33,7 @@
         </NuxtLink>
       </div>
 
-      <p class="mt-[100px] text-sm text-center text-secondary">@ Copyright 2024 Sanchia Jodie -  Full Stack Creative Mobile and Web Developer</p>
+      <p class="mt-8 text-sm text-center text-secondary sm:mt-[100px]">@ Copyright 2024 Sanchia Jodie -  Full Stack Creative Mobile and Web Developer</p>
     </div>
   </footer>
 </template>
