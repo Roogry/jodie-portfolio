@@ -23,7 +23,7 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {
       'Source Sans 3': '100..700',
-      Rubik: [500],
+      Rubik: '100..700',
       Poppins: [700],
     }
   }
