@@ -35,8 +35,7 @@
               <div class="mt-8 detail-item">
                 <h2 class="text-lg font-medium sm:text-xl">Study Case</h2>
                 <div class="mt-3 case-desc">
-                  <p class="mt-2.5 text-base text-secondary sm:text-lg">The system addresses the challenges of manual processes in managing student participation, event registration, and document verification.</p>
-                  <p class="mt-2.5 text-base text-secondary sm:text-lg">With features like student registration, event and committee sign-ups, QR attendance tracking, voting, and document uploads, the platform simplifies administrative tasks. It enables seamless participation in campus activities and enhances transparency and accuracy. The system has reduced the workload for both students and administrators, leading to improved engagement and efficient event management.</p>
+                  <p class="mt-2.5 text-base text-secondary sm:text-lg"><MDC :value="portfolio.studyCase" unwrap="p" /></p>
                 </div>
               </div>
 

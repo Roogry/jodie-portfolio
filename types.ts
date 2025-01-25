@@ -9,6 +9,7 @@ export type Portfolio = {
   slug: string;
   thumbnailPath: string;
   visitUrl: string|null;
+  studyCase: string|null;
   images: Array<string>;
 };
 

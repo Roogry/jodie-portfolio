@@ -7,7 +7,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     'nuxt-svgo',
     '@nuxtjs/google-fonts',
-    '@nuxt/ui'
+    '@nuxt/ui',
+    '@nuxtjs/mdc'
   ],
   pinia: {
     storesDirs: ['./stores/**'],
