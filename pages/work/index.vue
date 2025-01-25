@@ -3,19 +3,19 @@
     <section id="header-section">
       <div class="relative overflow-hidden">
         <Navbar />
-        <div class="container h-[300px] flex flex-col justify-center">
-          <h1 class="text-5xl font-medium">My Portfolio</h1>
-          <p class="mt-4 text-xl">Selected exciting recent of my work.</p>
+        <div class="container px-8 h-[150px] flex flex-col justify-center sm:px-10 sm:h-[300px]">
+          <h1 class="text-3xl font-medium lg:text-5xl sm:text-4xl">My Portfolio</h1>
+          <p class="mt-4 text-base text-secondary sm:text-xl">Selected exciting recent of my work.</p>
         </div>
 
-        <NuxtImg class="absolute top-0 left-0 w-100 -z-30"
-          src="/decorations/bg-header-title.png" sizes="100vw" />
+        <NuxtImg class="absolute top-0 left-0 w-full min-h-[250px] -z-30 sm:min-h-[405px]"
+          src="/decorations/bg-header-title.png" />
       </div>
     </section>
 
     <section id="content-section">
-      <div class="container mt-16">
-        <div class="grid grid-cols-2 gap-y-10 gap-x-8">
+      <div class="container px-8 mt-8 sm:px-10 sm:mt-16">
+        <div class="grid grid-cols-1 gap-y-4 gap-x-8 sm:grid-cols-2 sm:gap-y-10">
           <WorkListCard  v-for="portfolio in portfolios"
             :name="portfolio.name"
             :year="portfolio.year"
@@ -26,18 +26,6 @@
           />
         </div>
       </div>
-
-      <!-- <div class="mt-16 mb-20 flex justify-center">
-        <NuxtLink to="#footer"
-          class="h-14 rounded-full font-semibold text-xl text-white bg-blue-600 hover:bg-blue-800">
-          <div class="h-full flex gap-3 items-center justify-start">
-            <p class="ml-5">Load More</p>
-            <span class="mr-3 bg-white p-1.5 rounded-full">
-              <i-right class="w-6 h-6 text-black rotate-90" :fontControlled="false" />
-            </span>
-          </div>
-        </NuxtLink>
-      </div> -->
     </section>
 
     <section id="footer" class="pt-16" >

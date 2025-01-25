@@ -1,34 +1,34 @@
 <template>
   <NuxtLink :to="'/work/' + slug"
-    class="group/work rounded-xl border-[.5px] bg-white/30 backdrop-blur-sm border-gray-300 hover:bg-blue-500/10 hover:border-blue-300">
-    <div class="p-5">
-      <div class="flex flex-nowrap gap-4 items-center">
+    class="group rounded-xl border-[.5px] bg-white/30 backdrop-blur-sm border-gray-300 hover:bg-blue-500/10 hover:border-blue-300">
+    <div class="h-full p-4 flex flex-col gap-4 sm:p-5">
+      <div class="hidden lg:flex lg:flex-nowrap lg:gap-2 lg:items-center">
         <Badge v-for="role in roles">
-          <p class="text-sm font-medium">{{ role }}</p>
+          <p class="text-xs">{{ role }}</p>
         </Badge>
       </div>
 
-      <div class="mt-4 flex gap-4">
-        <NuxtImg class="w-[170px] h-[170px] rounded-xl" :src="thumbnailPath" alt="Work Example"/>
+      <div class="h-full flex flex-col gap-3 items-center lg:flex-row sm:gap-4 ">
+        <NuxtImg class="w-full rounded-xl lg:w-[170px] lg:h-[170px]" :src="thumbnailPath" :alt="'Overview ' + name" placeholder/>
 
-        <div class="flex gap-4 flex-col justify-between">
+        <div class="h-full w-full flex gap-1 flex-col justify-between sm:gap-4">
           <div class="work-description">
-            <h2 class="text-xl font-bold line-clamp-2">{{ name }}</h2>
-            <p class="mt-2.5 line-clamp-2">{{ description }}</p>
+            <h2 class="text-base font-medium line-clamp-2 sm:font-medium sm:text-lg">{{ name }}</h2>
+            <p class="mt-1 text-secondary line-clamp-2">{{ description }}</p>
           </div>
 
-          <div class="flex gap-4 items-center justify-between">
-            <div class="group/work font-semibold text-xl">
+          <div class="hidden gap-4 items-center justify-between sm:flex">
+            <div class="group flex items-center justify-center font-normal text-lg sm:font-semibold">
               <div class="h-full inline-flex gap-3 items-center justify-start">
-                <p class="text-secondary group-hover/work:text-blue-700">View Project</p>
+                <p class="text-secondary group-hover:text-blue-700">Detail <span class="hidden md:inline-block">Project</span></p>
                 <span
-                  class="p-1.5 border-[.5px] border-gray-300 rounded-full group-hover/work:border-blue-500 group-hover/work:bg-blue-500">
-                  <i-right class="w-6 h-6 text-black group-hover/work:text-white" :fontControlled="false" />
+                  class="p-1 rounded-full border-[.5px] border-gray-300 group-hover:border-blue-500 group-hover:bg-blue-500">
+                  <i-right class="w-6 h-6 text-black group-hover:text-white" :fontControlled="false" />
                 </span>
               </div>
             </div>
 
-            <p>{{ year }}</p>
+            <p class="text-secondary">{{ year }}</p>
           </div>
         </div>
       </div>
