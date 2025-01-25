@@ -1,7 +1,7 @@
 <template>
   <section id="home-section">
     <div class="relative">
-      <div class="relative">
+      <div class="home-container">
         <Navbar />
 
         <div class="container min-h-[100vh] pt-4 px-8 flex flex-col items-center sm:pt-12">
@@ -10,7 +10,7 @@
             <p class="mt-4 text-xl font-medium lg:text-4xl sm:mt-8 sm:text-3xl">With Me <span class="font-bold text-blue-500">Sanchia Jodie</span></p>
           </div>
 
-          <NuxtImg class="mt-8" width="500px" src="/decorations/card-jodie.png" alt="Sanchia Jodie"/>
+          <NuxtImg class="mt-8" width="500px" src="/decorations/card-jodie.png" alt="Sanchia Jodie" placeholder/>
 
           <p class="mt-8 max-w-[520px] text-base text-secondary text-center leading-relaxed lg:text-2xl sm:text-xl">
             I’m a Full Stack Creative Mobile and Web Developer. Delivering
@@ -28,17 +28,15 @@
               </div>
             </NuxtLink>
             <NuxtLink to="/documents/resume-jodie.pdf" target="_blank"
-              class="w-[156px] h-14 rounded-full font-semibold text-lg text-secondary border border-secondary hover:text-white hover:bg-secondar sm:w-[164px] sm:h-14 sm:text-xl">
+              class="w-[156px] h-14 rounded-full font-semibold text-lg text-secondary border border-secondary hover:text-white hover:bg-secondary sm:w-[164px] sm:h-14 sm:text-xl">
               <div class="h-full flex items-center justify-center">Download CV</div>
             </NuxtLink>
           </div>
         </div>
       </div>
 
-      <NuxtImg class="absolute -z-30 -top-1/3 -left-1/2" densities="x1" width="1652px" format="webp"
-        src="/decorations/circular-radial-gradient-blue.png" />
-      <NuxtImg class="absolute -z-30 top-0 -right-1/2" densities="x1" width="1652px" format="webp"
-        src="/decorations/circular-radial-gradient-blue.png" />
+      <span class="particle-circular particle-origin-top-left particle-animate-rotate top-[-20vmax] left-[-70vmax] sm:top-[-30vmax] sm:left-[-50vmax]"></span>
+      <span class="particle-circular particle-origin-top-left particle-animate-rotate top-[20vmax] right-[-70vmax] sm:top-[0vmax] sm:right-[-50vmax]"></span>
     </div>
   </section>
 
@@ -86,7 +84,7 @@
       </div>
     </div>
 
-    <NuxtImg class="absolute -z-30 top-0 w-full" src="/decorations/bg-work.png" />
+    <NuxtImg class="absolute -z-30 top-0 w-full" src="/decorations/bg-work.png" placeholder />
   </section>
 
   <section id="certificate-section">
@@ -100,26 +98,20 @@
         <div class="p-4 rounded-xl bg-blue-50 border-[.5px] border-blue-300">
           <UCarousel ref="certificateRef" v-slot="{ item }" :items="certificates" :ui="{ item: 'basis-full' }" 
             class="block rounded-lg overflow-hidden sm:hidden" arrows>
-            <NuxtImg :src="item" class="w-full" draggable="false"/>
+            <NuxtImg :src="item" class="w-full" draggable="false" placeholder/>
           </UCarousel>
 
           <div class="p-8 hidden sm:grid sm:grid-cols-3 sm:gap-6">
-            <NuxtImg v-for="certificate in certificates" class="w-full rounded-lg border border-white" :src="certificate" />
+            <NuxtImg 
+              v-for="certificate in certificates" 
+              class="w-full object-cover rounded-lg border border-white" 
+              style="aspect-ratio: 7/5;"
+              :src="certificate" 
+              placeholder
+            />
           </div>
         </div>
       </div>
-
-      <!-- <div class="mt-12 flex justify-center">
-        <NuxtLink to="#contact"
-          class="h-14 rounded-full font-semibold text-xl text-white bg-blue-600 hover:bg-blue-800">
-          <div class="h-full flex gap-3 items-center justify-start">
-            <p class="ml-5">Discover All</p>
-            <span class="mr-3 bg-white p-1.5 rounded-full">
-              <i-right class="w-6 h-6 text-black" :fontControlled="false" />
-            </span>
-          </div>
-        </NuxtLink>
-      </div> -->
     </div>
   </section>
 
@@ -172,4 +164,6 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@use "~/assets/scss/bg-animate.scss";
+</style>

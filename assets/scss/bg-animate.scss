@@ -1,0 +1,38 @@
+@use 'sass:math';
+
+body {
+  overflow-x: hidden;
+}
+
+$particleSize: 100vmax;
+.particle-circular {
+  width: $particleSize;
+  height: $particleSize;
+  z-index: -20;
+  border-radius: 9999px;
+  position: absolute;
+  backface-visibility: hidden;
+  background-image: radial-gradient(#1E97FB80 0%, #1e98fb30 57%, #1e98fb00 70%);
+}
+
+.particle-origin-top-left {
+  transform-origin: 60vmax 40vmax;
+  animation-duration: calc(math.random(6 * 10) / 10) * 1s + 10s;
+}
+
+.particle-origin-bottom-right {
+  transform-origin: 40vmax 60vmax;
+  animation-duration: calc(math.random(6 * 10) / 10) * 1s + 10s;
+}
+
+.particle-animate-rotate {
+  animation-name: move;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes move {
+  100% {
+    transform: translate3d(0vw, 0vw, 1px) rotate(360deg);
+  }
+}

@@ -17,7 +17,7 @@ export default <Partial<Config>> {
     },
     extend : {
       colors: {
-        secondary: '#505050',
+        secondary: '#5F5F5FFF',
         blue: {
           '50': '#eefaff',
           '100': '#d8f3ff',
