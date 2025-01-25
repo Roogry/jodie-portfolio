@@ -2,10 +2,10 @@
   <div class="relative">
     <Navbar />
 
-    <div class="container pt-12">
-      <div class="grid grid-cols-1 gap-10 sm:grid-cols-5">
-        <div class="sm:col-span-2">
-          <section id="work-info" class="px-8 sm:px-10">
+    <div class="container pt-12 sm:px-10">
+      <div class="grid grid-cols-1 gap-10 lg:grid-cols-5 sm:grid-cols-2">
+        <div class="lg:col-span-2 sm:col-span-1">
+          <section id="work-info" class="px-8 sm:px-0">
             <h1 class="text-3xl font-medium lg:text-5xl sm:text-4xl">{{ portfolio.name }}</h1>
             <p class="mt-4 mb-6 text-base text-secondary sm:text-xl">{{ portfolio.description }}</p>
             
@@ -30,9 +30,9 @@
             </div>
           </section>
 
-          <section id="work-details" class="px-8 sm:px-10">
+          <section id="work-details" class="px-8 sm:px-0">
             <div class="mt-12 info-detail sm:mt-20">
-              <div class="mt-8 detail-item">
+              <div v-if="portfolio.studyCase" class="mt-8 detail-item">
                 <h2 class="text-lg font-medium sm:text-xl">Study Case</h2>
                 <div class="mt-3 case-desc">
                   <p class="mt-2.5 text-base text-secondary sm:text-lg"><MDC :value="portfolio.studyCase" unwrap="p" /></p>
@@ -64,7 +64,7 @@
             </div>
           </section>
         </div>
-        <div class="hidden sm:col-span-3 sm:inline-block">
+        <div class="hidden lg:col-span-3 sm:inline-block sm:col-span-1">
           <section id="work-overview-desktop" class="w-full">
             <div class="flex flex-col gap-12">
               <NuxtImg v-for="(image, i) in portfolio.images" class="rounded-xl" :src="image" :alt="'Portfolio Overview ' + i + 1" placeholder/>
