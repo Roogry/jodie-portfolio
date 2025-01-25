@@ -10,7 +10,7 @@
             <p class="mt-4 text-xl font-medium lg:text-4xl sm:mt-8 sm:text-3xl">With Me <span class="font-bold text-blue-500">Sanchia Jodie</span></p>
           </div>
 
-          <NuxtImg class="mt-8" width="500px" src="/decorations/card-jodie.png" alt="Sanchia Jodie" placeholder/>
+          <NuxtImg class="mt-8" width="500px" src="/images/decorations/card-jodie.png" alt="Sanchia Jodie" placeholder/>
 
           <p class="mt-8 max-w-[520px] text-base text-secondary text-center leading-relaxed lg:text-2xl sm:text-xl">
             I’m a Full Stack Creative Mobile and Web Developer. Delivering
@@ -84,7 +84,7 @@
       </div>
     </div>
 
-    <NuxtImg class="absolute -z-30 top-0 w-full" src="/decorations/bg-work.png" placeholder />
+    <NuxtImg class="absolute -z-30 top-0 w-full" src="/images/decorations/bg-work.png" placeholder />
   </section>
 
   <section id="certificate-section">
@@ -125,12 +125,12 @@ export default {
   data() {
     return {
       certificates: [
-        '/certificates/cert-frontend-expert.png',
-        '/certificates/cert-flutter-101.png',
-        '/certificates/cert-android-101.png',
-        '/certificates/cert-backend-js-pemula.png',
-        '/certificates/cert-tensorflow.png',
-        '/certificates/cert-git.png',
+        '/images/certificates/cert-frontend-expert.png',
+        '/images/certificates/cert-flutter-101.png',
+        '/images/certificates/cert-android-101.png',
+        '/images/certificates/cert-backend-js-pemula.png',
+        '/images/certificates/cert-tensorflow.png',
+        '/images/certificates/cert-git.png',
       ],
     };
   },

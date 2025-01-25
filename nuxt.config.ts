@@ -15,11 +15,6 @@ export default defineNuxtConfig({
   },
   image: {
     quality: 80,
-    dir: 'assets/images',
-    domains: [
-      'jodie-portfolio.vercel.app',
-      'jodie-portfolio-roogrys-projects.vercel.app'
-    ],
     screens: {
       workImagesMobile: 150,
     }

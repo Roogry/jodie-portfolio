@@ -9,7 +9,7 @@
         </div>
 
         <NuxtImg class="absolute top-0 left-0 w-full min-h-[250px] -z-30 sm:min-h-[405px]"
-          src="/decorations/bg-header-title.png" />
+          src="/images/decorations/bg-header-title.png" />
       </div>
     </section>
 
@@ -46,9 +46,3 @@ export default {
   },
 }
 </script>
-
-<!-- <style scoped>
-#header-section {
-  background-image: url('~/assets/images/decorations/big-header-title.png');
-}
-</style> -->

@@ -23,7 +23,7 @@
           <i-instagram class="text-white" :fontControlled="false" />
         </NuxtLink>
         <div class="w-8 h-8 bg-blue-700 rounded-full overflow-hidden transition-all ease-in-out duration-400 hover:scale-125 hover:bg-yellow-500 hover:animate-wiggle">
-          <NuxtImg src="/decorations/jodie-mini.png" placeholder/>
+          <NuxtImg src="/images/decorations/jodie-mini.png" placeholder/>
         </div>
         <NuxtLink to="https://github.com/Roogry/roogry">
           <i-github class="w-8 h-8 text-secondary transition duration-200 ease-in-out hover:scale-110" :fontControlled="false" />
