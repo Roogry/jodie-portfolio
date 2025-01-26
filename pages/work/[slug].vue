@@ -24,7 +24,7 @@
             <div class="block mt-8 sm:hidden">
               <section id="work-image-section" class="w-full">
                 <UCarousel v-slot="{ item, i }" :items="portfolio.images" :ui="{ item: 'snap-center', container: 'gap-4 px-8' }">
-                  <NuxtImg height="150" class="rounded-xl border-2 border-gray-300/60" :src="item" :alt="getAltImage(portfolio.name, i)" placeholder/>
+                  <NuxtImg class="h-[150px] rounded-xl border-2 border-gray-300/60" :src="item" :alt="getAltImage(portfolio.name, i)" placeholder/>
                 </UCarousel>
               </section>
             </div>

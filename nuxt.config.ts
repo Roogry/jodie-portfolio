@@ -15,9 +15,6 @@ export default defineNuxtConfig({
   },
   image: {
     quality: 80,
-    screens: {
-      workImagesMobile: 150,
-    }
   },
   svgo: {
     componentPrefix: 'i',
