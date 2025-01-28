@@ -24,7 +24,7 @@
             <div class="block mt-8 sm:hidden">
               <section id="work-image-section" class="w-full">
                 <UCarousel v-slot="{ item, i }" :items="portfolio.images" :ui="{ item: 'snap-center', container: 'gap-4 px-8' }">
-                  <NuxtImg class="h-[150px] rounded-xl border-2 border-gray-300/60" :src="item" :alt="getAltImage(portfolio.name, i)" placeholder/>
+                  <NuxtImg @click="showOverview(i)" class="h-[150px] rounded-xl border-2 border-gray-300/60" :src="item" :alt="getAltImage(portfolio.name, i)" placeholder/>
                 </UCarousel>
               </section>
             </div>
@@ -67,7 +67,7 @@
         <div class="hidden lg:col-span-3 sm:inline-block sm:col-span-1">
           <section id="work-overview-desktop" class="w-full">
             <div class="flex flex-col gap-12">
-              <NuxtImg v-for="(image, i) in portfolio.images" class="rounded-xl" :src="image" :alt="'Portfolio Overview ' + i + 1" placeholder/>
+              <NuxtImg v-for="(image, i) in portfolio.images" @click="showOverview(i)" class="rounded-xl" :src="image" :alt="'Portfolio Overview ' + i + 1" placeholder/>
             </div>
           </section>
         </div>
@@ -77,6 +77,13 @@
     <section id="footer" class="mt-20 sm:mt-40">
       <Footer is-mini-ver />
     </section>
+
+    <VueEasyLightbox
+      :visible="isOpenOverview"
+      :imgs="portfolio.images"
+      :index="focusedPortfolioImgIdx"
+      @hide="isOpenOverview = false"
+    />
     
     <span class="opacity-60 particle-circular particle-origin-top-left particle-animate-rotate top-[-20vmax] left-[-90vmax] sm:top-[-20vmax] sm:left-[-80vmax]"></span>
     <span class="opacity-40 particle-sm particle-circular particle-origin-bottom-right particle-animate-rotate top-[20vmax] right-[-90vmax] sm:top-[30vmax] sm:right-[-80vmax]"></span>
@@ -85,6 +92,12 @@
 
 <script lang="ts">
 export default {
+  data() {
+    return {
+      isOpenOverview: false,
+      focusedPortfolioImgIdx: 0,
+    }
+  },
   computed: {
     slug() {
       return this.$route.params.slug;
@@ -107,6 +120,10 @@ export default {
     },
     getAltImage(name: String, index: number) {
       return 'Overview ' + name + ' ' + (index+1);
+    },
+    showOverview(index: number) {
+      this.isOpenOverview = true;
+      this.focusedPortfolioImgIdx = index;
     },
   }
 }

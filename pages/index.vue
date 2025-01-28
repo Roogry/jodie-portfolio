@@ -96,14 +96,15 @@
 
       <div class="max-w-[960px] mt-16">
         <div class="p-4 rounded-xl bg-blue-50 border-[.5px] border-blue-300">
-          <UCarousel ref="certificateRef" v-slot="{ item }" :items="certificates" :ui="{ item: 'basis-full' }" 
+          <UCarousel ref="certificateRef" v-slot="{ item, i }" :items="certificates" :ui="{ item: 'basis-full' }" 
             class="block rounded-lg overflow-hidden sm:hidden" arrows>
-            <NuxtImg :src="item" class="w-full" draggable="false" placeholder/>
+            <NuxtImg @click="showOverview(i)" :src="item" class="w-full" draggable="false" placeholder/>
           </UCarousel>
 
           <div class="p-8 hidden sm:grid sm:grid-cols-3 sm:gap-6">
             <NuxtImg 
-              v-for="certificate in certificates" 
+              v-for="( certificate, i ) in certificates" 
+              @click="showOverview(i)"
               class="w-full object-cover rounded-lg border border-white" 
               style="aspect-ratio: 7/5;"
               :src="certificate" 
@@ -118,12 +119,21 @@
   <section id="footer">
     <Footer />
   </section>
+
+  <VueEasyLightbox
+    :visible="isOpenOverviewCertificate"
+    :imgs="certificates"
+    :index="focusedCertificateImgIdx"
+    @hide="isOpenOverviewCertificate = false"
+  />
 </template>
 
 <script lang="ts">
 export default {
   data() {
     return {
+      isOpenOverviewCertificate: false,
+      focusedCertificateImgIdx: 0,
       certificates: [
         '/images/certificates/cert-frontend-expert.png',
         '/images/certificates/cert-flutter-101.png',
@@ -160,6 +170,12 @@ export default {
         this.$refs['certificateRef'].next()
       }, 3000);
     });
+  },
+  methods: {
+    showOverview(index: number) {
+      this.isOpenOverviewCertificate = true;
+      this.focusedCertificateImgIdx = index;
+    },
   },
 }
 </script>
