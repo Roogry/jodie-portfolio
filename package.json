@@ -24,6 +24,7 @@
     "@pinia/nuxt": "^0.5.5",
     "nuxt-easy-lightbox": "^1.0.2",
     "nuxt-svgo": "^4.0.6",
-    "sass": "^1.83.4"
+    "sass": "^1.83.4",
+    "v-gsap-nuxt": "^1.3.4"
   }
 }
