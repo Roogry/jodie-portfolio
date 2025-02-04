@@ -2,74 +2,119 @@
   <div class="relative">
     <Navbar />
 
-    <div class="container pt-12 sm:px-10">
+    <div class="container pt-12 min-h-screen sm:px-10">
       <div class="grid grid-cols-1 gap-10 lg:grid-cols-5 sm:grid-cols-2">
         <div class="lg:col-span-2 sm:col-span-1">
-          <section id="work-info" class="px-8 sm:px-0">
-            <h1 class="text-3xl font-medium lg:text-5xl sm:text-4xl">{{ portfolio.name }}</h1>
-            <p class="mt-4 mb-6 text-base text-secondary sm:text-xl">{{ portfolio.description }}</p>
+          <div v-if="portfolio.id" class="content">
+            <section id="work-info" class="px-8 sm:px-0">
+              <h1 class="text-3xl font-medium lg:text-5xl sm:text-4xl">{{ portfolio.name }}</h1>
+              <p class="mt-4 mb-6 text-base text-secondary sm:text-xl">{{ portfolio.description }}</p>
+              
+              <NuxtLink v-if="portfolio.visitUrl" :to="portfolio.visitUrl" target="_blank" class="group font-semibold text-lg sm:text-xl">
+                <div class="h-full inline-flex gap-3 items-center justify-start">
+                  <p class="text-secondary group-hover:text-blue-700">View Result</p>
+                  <span
+                    class="p-1.5 border-[.5px] border-gray-300 rounded-full group-hover:border-blue-500 group-hover:bg-blue-500">
+                    <i-right class="w-6 h-6 text-black group-hover:text-white" :fontControlled="false" />
+                  </span>
+                </div>
+              </NuxtLink>
+            </section>
+
+            <section id="work-overview-mobile">
+              <div class="block mt-8 sm:hidden">
+                <section id="work-image-section" class="w-full">
+                  <UCarousel v-slot="{ item, i }" :items="portfolio.images" :ui="{ item: 'snap-center', container: 'gap-4 px-8' }">
+                    <NuxtImg @click="showOverview(i)" class="h-[150px] rounded-xl border-2 border-gray-300/60" :src="item" :alt="getAltImage(portfolio.name, i)" placeholder/>
+                  </UCarousel>
+                </section>
+              </div>
+            </section>
+
+            <section id="work-details" class="px-8 sm:px-0">
+              <div class="mt-12 info-detail sm:mt-20">
+                <div v-if="portfolio.studyCase" class="mt-8 detail-item">
+                  <h2 class="text-lg font-medium sm:text-xl">Study Case</h2>
+                  <div class="mt-3 case-desc">
+                    <p class="mt-2.5 text-base text-secondary sm:text-lg"><MDC :value="portfolio.studyCase" unwrap="p" /></p>
+                  </div>
+                </div>
+
+                <div v-if="portfolio.client || portfolio.year" class="mt-8 detail-item">
+                  <h2 class="text-lg font-medium sm:text-xl">Client - Year</h2>
+                  <p class="mt-3 text-base text-secondary sm:text-lg">{{ portfolio.client }} - {{ portfolio.year }}</p>
+                </div>
+
+                <div v-if="portfolio.roles" class="mt-8 detail-item">
+                  <h2 class="text-lg font-medium sm:text-xl">Role</h2>
+                  <div class="mt-3 flex flex-wrap gap-3 items-center">
+                    <Badge v-for="role in portfolio.roles" variant="colored">
+                      <p class="text-sm">{{ role }}</p>
+                    </Badge>
+                  </div>
+                </div>
+
+                <div v-if="portfolio.techs" class="mt-8 detail-item">
+                  <h2 class="text-xl font-bold">Technology</h2>
+                  <div class="mt-3 flex flex-wrap gap-3 items-center">
+                    <Badge v-for="tech in portfolio.techs" variant="colored">
+                      <p class="text-sm">{{ tech }}</p>
+                    </Badge>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- skeleton -->
+          <div v-else class="px-8 sm:px-0">
+            <div class="space-y-3">
+              <USkeleton class="h-12 max-w-[250px]" :ui="{ background: 'bg-gray-300/40 dark:bg-gray-300/40' }"/>
+              <USkeleton class="h-12" :ui="{ background: 'bg-gray-300/40 dark:bg-gray-300/40' }"/>
+            </div>
+
+            <div class="mt-6 mb-6 space-y-2">
+              <USkeleton class="h-6" :ui="{ background: 'bg-gray-300/40 dark:bg-gray-300/40' }"/>
+              <USkeleton class="h-6" :ui="{ background: 'bg-gray-300/40 dark:bg-gray-300/40' }"/>
+              <USkeleton class="h-6 max-w-[300px]" :ui="{ background: 'bg-gray-300/40 dark:bg-gray-300/40' }"/>
+            </div>
+
+            <div class="flex items-center space-x-4">
+              <USkeleton class="h-6 w-[100px]" :ui="{ background: 'bg-gray-300/40 dark:bg-gray-300/40' }"/>
+              <USkeleton class="h-8 w-8" :ui="{ background: 'bg-gray-300/40 dark:bg-gray-300/40', rounded: 'rounded-full' }"/>
+            </div>
             
-            <NuxtLink v-if="portfolio.visitUrl" :to="portfolio.visitUrl" target="_blank" class="group font-semibold text-lg sm:text-xl">
-              <div class="h-full inline-flex gap-3 items-center justify-start">
-                <p class="text-secondary group-hover:text-blue-700">View Result</p>
-                <span
-                  class="p-1.5 border-[.5px] border-gray-300 rounded-full group-hover:border-blue-500 group-hover:bg-blue-500">
-                  <i-right class="w-6 h-6 text-black group-hover:text-white" :fontControlled="false" />
-                </span>
-              </div>
-            </NuxtLink>
-          </section>
+            <USkeleton class="block mt-8 sm:hidden h-[150px]" :ui="{ background: 'bg-gray-300/40 dark:bg-gray-300/40' }"/>
 
-          <section id="work-overview-mobile">
-            <div class="block mt-8 sm:hidden">
-              <section id="work-image-section" class="w-full">
-                <UCarousel v-slot="{ item, i }" :items="portfolio.images" :ui="{ item: 'snap-center', container: 'gap-4 px-8' }">
-                  <NuxtImg @click="showOverview(i)" class="h-[150px] rounded-xl border-2 border-gray-300/60" :src="item" :alt="getAltImage(portfolio.name, i)" placeholder/>
-                </UCarousel>
-              </section>
+            <USkeleton class="mt-12 h-6 w-[120px]" :ui="{ background: 'bg-gray-300/40 dark:bg-gray-300/40' }"/>
+            <div class="mt-3 mb-6 space-y-3">
+              <USkeleton class="h-4" :ui="{ background: 'bg-gray-300/40 dark:bg-gray-300/40' }"/>
+              <USkeleton class="h-4" :ui="{ background: 'bg-gray-300/40 dark:bg-gray-300/40' }"/>
+              <USkeleton class="h-4" :ui="{ background: 'bg-gray-300/40 dark:bg-gray-300/40' }"/>
+              <USkeleton class="h-4 max-w-[200px]" :ui="{ background: 'bg-gray-300/40 dark:bg-gray-300/40' }"/>
             </div>
-          </section>
-
-          <section id="work-details" class="px-8 sm:px-0">
-            <div class="mt-12 info-detail sm:mt-20">
-              <div v-if="portfolio.studyCase" class="mt-8 detail-item">
-                <h2 class="text-lg font-medium sm:text-xl">Study Case</h2>
-                <div class="mt-3 case-desc">
-                  <p class="mt-2.5 text-base text-secondary sm:text-lg"><MDC :value="portfolio.studyCase" unwrap="p" /></p>
-                </div>
-              </div>
-
-              <div class="mt-8 detail-item">
-                <h2 class="text-lg font-medium sm:text-xl">Client - Year</h2>
-                <p class="mt-3 text-base text-secondary sm:text-lg">{{ portfolio.client }} - {{ portfolio.year }}</p>
-              </div>
-
-              <div class="mt-8 detail-item">
-                <h2 class="text-lg font-medium sm:text-xl">Role</h2>
-                <div class="mt-3 flex flex-wrap gap-3 items-center">
-                  <Badge v-for="role in portfolio.roles" variant="colored">
-                    <p class="text-sm">{{ role }}</p>
-                  </Badge>
-                </div>
-              </div>
-
-              <div class="mt-8 detail-item">
-                <h2 class="text-xl font-bold">Technology</h2>
-                <div class="mt-3 flex flex-wrap gap-3 items-center">
-                  <Badge v-for="tech in portfolio.techs" variant="colored">
-                    <p class="text-sm">{{ tech }}</p>
-                  </Badge>
-                </div>
-              </div>
+            <div class="mt-10 mb-6 space-y-3">
+              <USkeleton class="h-4" :ui="{ background: 'bg-gray-300/40 dark:bg-gray-300/40' }"/>
+              <USkeleton class="h-4" :ui="{ background: 'bg-gray-300/40 dark:bg-gray-300/40' }"/>
+              <USkeleton class="h-4" :ui="{ background: 'bg-gray-300/40 dark:bg-gray-300/40' }"/>
+              <USkeleton class="h-4" :ui="{ background: 'bg-gray-300/40 dark:bg-gray-300/40' }"/>
+              <USkeleton class="h-4 max-w-[300px]" :ui="{ background: 'bg-gray-300/40 dark:bg-gray-300/40' }"/>
             </div>
-          </section>
+          </div>
         </div>
+        
         <div class="hidden lg:col-span-3 sm:inline-block sm:col-span-1">
-          <section id="work-overview-desktop" class="w-full">
+          <section v-if="portfolio.id" id="work-overview-desktop" class="w-full">
             <div class="flex flex-col gap-12">
               <NuxtImg v-for="(image, i) in portfolio.images" @click="showOverview(i)" class="rounded-xl" :src="image" :alt="'Portfolio Overview ' + i + 1" placeholder/>
             </div>
           </section>
+
+          <!-- skeleton -->
+          <div v-else>
+            <USkeleton class="w-full h-[450px]" :ui="{ background: 'bg-gray-300/40 dark:bg-gray-300/40' }"/>
+            <USkeleton class="mt-12 w-full h-[300px]" :ui="{ background: 'bg-gray-300/40 dark:bg-gray-300/40' }"/>
+          </div>
         </div>
       </div>
     </div>
