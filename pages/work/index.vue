@@ -4,8 +4,8 @@
       <div class="relative overflow-hidden">
         <Navbar />
         <div class="container px-8 h-[150px] flex flex-col justify-center sm:px-10 sm:h-[300px]">
-          <h1 class="text-3xl font-medium lg:text-5xl sm:text-4xl">My Portfolio</h1>
-          <p class="mt-4 text-base text-secondary sm:text-xl">Selected exciting recent of my work.</p>
+          <h1 v-gsap.from='{ opacity: 0, x: -50 }' class="text-3xl font-medium lg:text-5xl sm:text-4xl">My Portfolio</h1>
+          <p v-gsap.delay-100.from='{ opacity: 0, x: -50 }' class="mt-4 text-base text-secondary sm:text-xl">Selected exciting recent of my work.</p>
         </div>
 
         <NuxtImg class="absolute top-0 left-0 w-full min-h-[250px] -z-30 sm:min-h-[405px]"
