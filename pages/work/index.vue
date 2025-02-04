@@ -23,6 +23,11 @@
             :roles="portfolio.roles"
             :slug="portfolio.slug"
             :thumbnailPath="portfolio.thumbnailPath"
+            v-gsap.whenVisible.from="{
+              opacity: 0, y: 50,
+              start: 'top 100%',
+              end: '50% bottom'
+            }"
           />
         </div>
       </div>

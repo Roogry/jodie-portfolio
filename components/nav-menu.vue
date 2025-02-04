@@ -1,13 +1,11 @@
 <template>
-  <nav>
-    <ul class="flex gap-6">
-      <li v-for="menu in navMenus">
-        <NuxtLink :to="menu.path" class="font-semibold text-secondary hover:text-blue-600">
-          {{ menu.name }}
-        </NuxtLink>
-      </li>
-    </ul>
-  </nav>
+  <ul class="flex gap-6">
+    <li v-for="menu in navMenus">
+      <NuxtLink :to="menu.path" class="font-semibold text-secondary hover:text-blue-600">
+        {{ menu.name }}
+      </NuxtLink>
+    </li>
+  </ul>
 </template>
 
 <script lang="ts" setup>

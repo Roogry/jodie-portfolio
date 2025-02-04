@@ -7,9 +7,9 @@
           <p class="hidden font-bold font-['Poppins'] sm:inline-block">Sanchia Jodie</p>
         </div>
       </NuxtLink>
-      <div class="items-center justify-center">
+      <nav class="items-center justify-center">
         <NavMenu />
-      </div>
+      </nav>
       <NuxtLink to="/#footer" class="hidden px-5 py-2 rounded-full font-semibold text-white bg-blue-600 hover:bg-blue-800 sm:inline-block">
         Contact Me
       </NuxtLink>

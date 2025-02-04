@@ -63,7 +63,7 @@
             opacity: 0, 
             y: 50, 
             start: 'top 80%',
-            end: 'bottom 50%',
+            end: 'bottom 90%',
           }"
           class="grid grid-cols-1 gap-y-4 gap-x-6 lg:grid-cols-3 md:gap-y-10 md:gap-x-8 sm:grid-cols-2 sm:gap-y-5"
         >
@@ -107,9 +107,9 @@
             opacity: 0, 
             y: 50, 
             start: 'top 80%',
-            end: 'bottom 60%',
+            end: 'bottom 100%',
           }"
-          class="px-8 overflow-x-auto overflow-y-hidden flex gap-x-4 sm:px-10 sm:grid sm:gap-y-10 sm:gap-x-8 sm:grid-cols-2 sm:overflow-hidden"
+          class="px-8 overflow-x-auto flex gap-x-4 sm:px-10 sm:grid sm:gap-y-10 sm:gap-x-8 sm:grid-cols-2 sm:overflow-hidden"
         >
           <WorkCard v-for="portfolio in portfolios"
             :name="portfolio.name"
@@ -126,34 +126,24 @@
   </section>
 
   <section id="certificate-section">
-    <div class="container px-8 pt-[50px] mb-[60px] sm:px-10 sm:pt-[100px] sm:mb-[120px]">
+    <div class="container h-[80vh] px-8 pt-[50px] mb-0 sm:h-screen sm:px-10 sm:pt-[100px] sm:mb-8">
       <div class="text-center">
         <h1 
-          v-gsap.desktop.whenVisible.from="{ 
+          v-gsap.whenVisible.from="{ 
             opacity: 0, y: 32,
             start: 'top 80%',
             end: 'bottom 50%',
-          }" 
-          v-gsap.mobile.whenVisible.from="{ 
-            opacity: 0, y: 32, 
-            start: 'top 50%',
-            end: 'bottom 10%',
           }" 
           class="text-3xl font-medium lg:text-5xl sm:text-4xl"
         >
           Certifications & Awards
         </h1>
         <p 
-          v-gsap.desktop.whenVisible.delay-100.from="{ 
+          v-gsap.whenVisible.delay-100.from="{ 
             opacity: 0, y: 32, 
             start: 'top 80%',
             end: 'bottom 50%',
-          }" 
-          v-gsap.mobile.whenVisible.from="{ 
-            opacity: 0, y: 32, 
-            start: 'top 50%',
-            end: 'bottom 10%',
-          }" 
+          }"
           class="mt-4 text-base text-secondary sm:text-xl"
         >
           Showcasing my journey of growth, expertise, and excellence
