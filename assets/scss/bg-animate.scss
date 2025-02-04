@@ -17,12 +17,12 @@ $particleSize: 100vmax;
 
 .particle-origin-top-left {
   transform-origin: 60% 40%;
-  animation-duration: calc(math.random(6 * 10) / 10) * 1s + 10s;
+  animation-duration: calc(math.random(6 * 10) / 10) * 1s + 5s;
 }
 
 .particle-origin-bottom-right {
   transform-origin: 40% 60%;
-  animation-duration: calc(math.random(6 * 10) / 10) * 1s + 10s;
+  animation-duration: calc(math.random(6 * 10) / 10) * 1s + 5s;
 }
 
 $smParticleSize: 50vmax;
