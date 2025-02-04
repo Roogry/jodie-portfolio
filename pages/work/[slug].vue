@@ -2,15 +2,20 @@
   <div class="relative">
     <Navbar />
 
-    <div class="container pt-12 min-h-screen sm:px-10">
+    <div class="container pt-12 pb-10 min-h-screen sm:px-10">
       <div class="grid grid-cols-1 gap-10 lg:grid-cols-5 sm:grid-cols-2">
         <div class="lg:col-span-2 sm:col-span-1">
           <div v-if="portfolio.id" class="content">
             <section id="work-info" class="px-8 sm:px-0">
-              <h1 class="text-3xl font-medium lg:text-5xl sm:text-4xl">{{ portfolio.name }}</h1>
-              <p class="mt-4 mb-6 text-base text-secondary sm:text-xl">{{ portfolio.description }}</p>
+              <h1 v-gsap.from='{ opacity: 0, y: 50 }' class="text-3xl font-medium lg:text-5xl sm:text-4xl">{{ portfolio.name }}</h1>
+              <p v-gsap.delay-100.from='{ opacity: 0, y: 50 }' class="mt-4 mb-6 text-base text-secondary sm:text-xl">{{ portfolio.description }}</p>
               
-              <NuxtLink v-if="portfolio.visitUrl" :to="portfolio.visitUrl" target="_blank" class="group font-semibold text-lg sm:text-xl">
+              <NuxtLink v-if="portfolio.visitUrl" 
+                :to="portfolio.visitUrl" 
+                target="_blank" 
+                class="group font-semibold text-lg sm:text-xl"
+                v-gsap.delay-500.from='{ opacity: 0, y: 50 }'
+              >
                 <div class="h-full inline-flex gap-3 items-center justify-start">
                   <p class="text-secondary group-hover:text-blue-700">View Result</p>
                   <span
@@ -24,7 +29,15 @@
             <section id="work-overview-mobile">
               <div class="block mt-8 sm:hidden">
                 <section id="work-image-section" class="w-full">
-                  <UCarousel v-slot="{ item, i }" :items="portfolio.images" :ui="{ item: 'snap-center', container: 'gap-4 px-8' }">
+                  <UCarousel 
+                    v-slot="{ item, i }" 
+                    :items="portfolio.images" 
+                    :ui="{ item: 'snap-center', container: 'gap-4 px-8' }"
+                    v-gsap.delay-800.from="{ 
+                      opacity: 0, 
+                      x: 50,
+                    }"
+                  >
                     <NuxtImg @click="showOverview(i)" class="h-[150px] rounded-xl border-2 border-gray-300/60" :src="item" :alt="getAltImage(portfolio.name, i)" placeholder/>
                   </UCarousel>
                 </section>
@@ -34,20 +47,20 @@
             <section id="work-details" class="px-8 sm:px-0">
               <div class="mt-12 info-detail sm:mt-20">
                 <div v-if="portfolio.studyCase" class="mt-8 detail-item">
-                  <h2 class="text-lg font-medium sm:text-xl">Study Case</h2>
-                  <div class="mt-3 case-desc">
+                  <h2 v-gsap.delay-1000.from='{ opacity: 0, y: 32 }' class="text-lg font-medium sm:text-xl">Study Case</h2>
+                  <div v-gsap.delay-1200.stagger.from='{ opacity: 0 }' class="mt-3 case-desc">
                     <p class="mt-2.5 text-base text-secondary sm:text-lg"><MDC :value="portfolio.studyCase" unwrap="p" /></p>
                   </div>
                 </div>
 
                 <div v-if="portfolio.client || portfolio.year" class="mt-8 detail-item">
-                  <h2 class="text-lg font-medium sm:text-xl">Client - Year</h2>
-                  <p class="mt-3 text-base text-secondary sm:text-lg">{{ portfolio.client }} - {{ portfolio.year }}</p>
+                  <h2 v-gsap.delay-1000.from='{ opacity: 0, y: 32 }' class="text-lg font-medium sm:text-xl">Client - Year</h2>
+                  <p v-gsap.delay-1000.from='{ opacity: 0 }' class="mt-3 text-base text-secondary sm:text-lg">{{ portfolio.client }} - {{ portfolio.year }}</p>
                 </div>
 
                 <div v-if="portfolio.roles" class="mt-8 detail-item">
-                  <h2 class="text-lg font-medium sm:text-xl">Role</h2>
-                  <div class="mt-3 flex flex-wrap gap-3 items-center">
+                  <h2 v-gsap.delay-1000.from='{ opacity: 0, y: 32 }' class="text-lg font-medium sm:text-xl">Role</h2>
+                  <div v-gsap.delay-1000.from='{ opacity: 0 }' class="mt-3 flex flex-wrap gap-3 items-center">
                     <Badge v-for="role in portfolio.roles" variant="colored">
                       <p class="text-sm">{{ role }}</p>
                     </Badge>
@@ -55,8 +68,8 @@
                 </div>
 
                 <div v-if="portfolio.techs" class="mt-8 detail-item">
-                  <h2 class="text-xl font-bold">Technology</h2>
-                  <div class="mt-3 flex flex-wrap gap-3 items-center">
+                  <h2 v-gsap.delay-1000.from='{ opacity: 0, y: 32 }' class="text-xl font-bold">Technology</h2>
+                  <div v-gsap.delay-1000.from='{ opacity: 0 }' class="mt-3 flex flex-wrap gap-3 items-center">
                     <Badge v-for="tech in portfolio.techs" variant="colored">
                       <p class="text-sm">{{ tech }}</p>
                     </Badge>
@@ -105,7 +118,7 @@
         
         <div class="hidden lg:col-span-3 sm:inline-block sm:col-span-1">
           <section v-if="portfolio.id" id="work-overview-desktop" class="w-full">
-            <div class="flex flex-col gap-12">
+            <div v-gsap.stagger.from='{ opacity: 0, y: 32 }' class="flex flex-col gap-12">
               <NuxtImg v-for="(image, i) in portfolio.images" @click="showOverview(i)" class="rounded-xl" :src="image" :alt="'Portfolio Overview ' + i + 1" placeholder/>
             </div>
           </section>
