@@ -4,7 +4,7 @@
     <div class="h-full p-5 flex flex-col justify-between">
       <div>
         <div class="relative">
-          <NuxtImg class="rounded-xl" :src="thumbnailPath" :alt="'Overview ' + name" placeholder/>
+          <NuxtImg class="w-full object-cover rounded-xl" style="aspect-ratio: 1742/1503;" :src="thumbnailPath" :alt="'Overview ' + name" :placeholder="[150]"/>
           <div class="hidden mt-4 lg:absolute lg:bottom-4 lg:left-2 lg:flex lg:flex-nowrap lg:gap-2 lg:items-center">
             <Badge v-for="role in roles" variant="blur">
               <p class="text-xs">{{ role }}</p>

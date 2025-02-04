@@ -107,9 +107,9 @@
             opacity: 0, 
             y: 50, 
             start: 'top 80%',
-            end: 'bottom 10%',
+            end: 'bottom 60%',
           }"
-          class="pb-4 px-8 overflow-x-auto overflow-y-hidden flex gap-x-4 sm:px-10 sm:grid sm:gap-y-10 sm:gap-x-8 sm:grid-cols-2 sm:overflow-hidden"
+          class="px-8 overflow-x-auto overflow-y-hidden flex gap-x-4 sm:px-10 sm:grid sm:gap-y-10 sm:gap-x-8 sm:grid-cols-2 sm:overflow-hidden"
         >
           <WorkCard v-for="portfolio in portfolios"
             :name="portfolio.name"
@@ -131,8 +131,8 @@
         <h1 
           v-gsap.desktop.whenVisible.from="{ 
             opacity: 0, y: 32,
-            start: 'top 10%',
-            end: 'bottom -10%',
+            start: 'top 80%',
+            end: 'bottom 50%',
           }" 
           v-gsap.mobile.whenVisible.from="{ 
             opacity: 0, y: 32, 
@@ -144,10 +144,10 @@
           Certifications & Awards
         </h1>
         <p 
-          v-gsap.desktop.whenVisible.from="{ 
+          v-gsap.desktop.whenVisible.delay-100.from="{ 
             opacity: 0, y: 32, 
-            start: 'top 10%',
-            end: 'bottom -10%',
+            start: 'top 80%',
+            end: 'bottom 50%',
           }" 
           v-gsap.mobile.whenVisible.from="{ 
             opacity: 0, y: 32, 
@@ -167,8 +167,8 @@
             width: 0,
             height: 0, 
             padding: 0,
-            start: 'top 10%',
-            end: 'bottom -20%',
+            start: 'top 80%',
+            end: 'bottom 40%',
           }"
           v-gsap.mobile.whenVisible.from="{ 
             scale: 0.8, 
@@ -193,12 +193,13 @@
           </UCarousel>
 
           <div 
-            v-gsap.desktop.whenVisible.delay-1000.stagger.from="{ 
-              opacity: 0,
-              start: 'top 10%',
-              end: 'bottom -20%',
+            v-gsap.desktop.whenVisible.stagger.from="{ 
+              y: 400,
+              start: 'top 60%',
+              end: 'bottom 40%',
             }"
             class="p-8 hidden sm:grid sm:grid-cols-3 sm:gap-6"
+            style="scale:none"
           >
             <NuxtImg 
               v-for="( certificate, i ) in certificates" 
