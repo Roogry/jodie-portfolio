@@ -152,7 +152,7 @@
 
       <div class="max-w-[960px] mt-16">
         <div 
-          v-gsap.markers.desktop.whenVisible.from="{ 
+          v-gsap.desktop.whenVisible.from="{ 
             scale: 0.8, 
             width: 0,
             height: 0, 
