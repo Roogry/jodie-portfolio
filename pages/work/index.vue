@@ -8,8 +8,7 @@
           <p v-gsap.delay-100.from='{ opacity: 0, x: -50 }' class="mt-4 text-base text-secondary sm:text-xl dark:text-gray-300">Selected exciting recent of my work.</p>
         </div>
 
-        <NuxtImg class="absolute top-0 left-0 w-full min-h-[250px] -z-30 sm:min-h-[405px]"
-          src="/images/decorations/bg-header-title.png" />
+        <span class="particle-circular particle-origin-bottom-right particle-animate-rotate top-[-50vmax] right-[-20vmax]"></span>
       </div>
     </section>
 
@@ -46,3 +45,7 @@ const portfolioStore = usePortfolioStore()
 // computed properties
 const portfolios = computed(() => portfolioStore.portfolios)
 </script>
+
+<style lang="scss" scoped>
+@use "~/assets/scss/bg-animate.scss";
+</style>
