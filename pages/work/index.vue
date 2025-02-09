@@ -39,15 +39,10 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  computed: {
-    portfolioStore() {
-      return usePortfolioStore();
-    },
-    portfolios() {
-      return this.portfolioStore.portfolios;
-    },
-  },
-}
+<script setup lang="ts">
+// Pinia store
+const portfolioStore = usePortfolioStore()
+
+// computed properties
+const portfolios = computed(() => portfolioStore.portfolios)
 </script>

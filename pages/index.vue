@@ -217,55 +217,52 @@
   />
 </template>
 
-<script lang="ts">
-export default {
-  data() {
-    return {
-      isOpenOverviewCertificate: false,
-      focusedCertificateImgIdx: 0,
-      certificates: [
-        '/images/certificates/cert-frontend-expert.png',
-        '/images/certificates/cert-flutter-101.png',
-        '/images/certificates/cert-android-101.png',
-        '/images/certificates/cert-backend-js-pemula.png',
-        '/images/certificates/cert-tensorflow.png',
-        '/images/certificates/cert-git.png',
-      ],
-    };
-  },
-  computed: {
-    portfolioStore() {
-      return usePortfolioStore();
-    },
-    serviceStore() {
-      return useServiceStore();
-    },
-    portfolios() {
-      return this.portfolioStore.portfolios.slice(0, 4);
-    },
-    services() {
-      return this.serviceStore.services;
-    },
-  },
-  mounted() {
-    this.$nextTick(async () => {
-      setInterval(() => {
-        if (!this.$refs['certificateRef']) return
+<script setup lang="ts">
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
-        if (this.$refs['certificateRef'].page === this.$refs['certificateRef'].pages) {
-          return this.$refs['certificateRef'].select(0)
-        }
-        
-        this.$refs['certificateRef'].next()
-      }, 3000);
-    });
-  },
-  methods: {
-    showOverview(index: number) {
-      this.isOpenOverviewCertificate = true;
-      this.focusedCertificateImgIdx = index;
-    },
-  },
+// Reactive state
+const isOpenOverviewCertificate = ref(false)
+const focusedCertificateImgIdx = ref(0)
+const certificates = [
+  '/images/certificates/cert-frontend-expert.png',
+  '/images/certificates/cert-flutter-101.png',
+  '/images/certificates/cert-android-101.png',
+  '/images/certificates/cert-backend-js-pemula.png',
+  '/images/certificates/cert-tensorflow.png',
+  '/images/certificates/cert-git.png',
+]
+
+// Template ref (gunakan tipe yang lebih spesifik jika diketahui)
+const certificateRef = ref<{ page: number; pages: number; next: () => void; select: (n: number) => void }>()
+
+// Stores
+const portfolioStore = usePortfolioStore()
+const serviceStore = useServiceStore()
+
+// Computed
+const portfolios = computed(() => portfolioStore.portfolios.slice(0, 4))
+const services = computed(() => serviceStore.services)
+
+// Auto-rotation logic
+let intervalId: number
+
+onMounted(() => {
+  intervalId = window.setInterval(() => {
+    if (!certificateRef.value) return
+    
+    const { page, pages } = certificateRef.value
+    page === pages ? certificateRef.value.select(0) : certificateRef.value.next()
+  }, 3000)
+})
+
+onUnmounted(() => {
+  clearInterval(intervalId)
+})
+
+// Methods
+const showOverview = (index: number) => {
+  isOpenOverviewCertificate.value = true
+  focusedCertificateImgIdx.value = index
 }
 </script>
 

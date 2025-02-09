@@ -5,7 +5,7 @@
     <div class="container pt-12 pb-10 min-h-screen sm:px-10">
       <div class="grid grid-cols-1 gap-10 lg:grid-cols-5 sm:grid-cols-2">
         <div class="lg:col-span-2 sm:col-span-1">
-          <div v-if="portfolio.id" class="content">
+          <div v-if="portfolio?.id" class="content">
             <section id="work-info" class="px-8 sm:px-0">
               <h1 v-gsap.from='{ opacity: 0, y: 50 }' class="text-3xl font-medium lg:text-5xl sm:text-4xl">{{ portfolio.name }}</h1>
               <p v-gsap.delay-100.from='{ opacity: 0, y: 50 }' class="mt-4 mb-6 text-base text-secondary sm:text-xl">{{ portfolio.description }}</p>
@@ -117,7 +117,7 @@
         </div>
         
         <div class="hidden lg:col-span-3 sm:inline-block sm:col-span-1">
-          <section v-if="portfolio.id" id="work-overview-desktop" class="w-full">
+          <section v-if="portfolio?.id" id="work-overview-desktop" class="w-full">
             <div v-gsap.stagger.from='{ opacity: 0, y: 32 }' class="flex flex-col gap-12">
               <NuxtImg v-for="(image, i) in portfolio.images" @click="showOverview(i)" class="rounded-xl" :src="image" :alt="'Portfolio Overview ' + i + 1" placeholder/>
             </div>
@@ -138,7 +138,7 @@
 
     <VueEasyLightbox
       :visible="isOpenOverview"
-      :imgs="portfolio.images"
+      :imgs="portfolio?.images"
       :index="focusedPortfolioImgIdx"
       @hide="isOpenOverview = false"
     />
@@ -148,42 +148,41 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  data() {
-    return {
-      isOpenOverview: false,
-      focusedPortfolioImgIdx: 0,
-    }
-  },
-  computed: {
-    slug() {
-      return this.$route.params.slug;
-    },
-    portfolioStore() {
-      return usePortfolioStore();
-    },
-    portfolio() {
-      return this.portfolioStore.portfolio;
-    },
-  },
-  mounted() {
-    this.$nextTick(async () => {
-      await this.getPortfolio();
-    });
-  },
-  methods: {
-    async getPortfolio() {
-      this.portfolioStore.showPortfolio(this.slug as String);
-    },
-    getAltImage(name: String, index: number) {
-      return 'Overview ' + name + ' ' + (index+1);
-    },
-    showOverview(index: number) {
-      this.isOpenOverview = true;
-      this.focusedPortfolioImgIdx = index;
-    },
-  }
+<script setup lang="ts">
+import { ref, computed, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+
+// Reactive state
+const isOpenOverview = ref(false)
+const focusedPortfolioImgIdx = ref(0)
+
+// Router
+const route = useRoute()
+
+// Pinia store
+const portfolioStore = usePortfolioStore()
+
+// Computed properties
+const slug = computed(() => route.params.slug as string)
+const portfolio = computed(() => portfolioStore.portfolio)
+
+// Lifecycle hook
+onMounted(async () => {
+  await getPortfolio()
+})
+
+// Methods
+const getPortfolio = async () => {
+  await portfolioStore.showPortfolio(slug.value)
+}
+
+const getAltImage = (name: string, index: number) => {
+  return `Overview ${name} ${index + 1}`
+}
+
+const showOverview = (index: number) => {
+  isOpenOverview.value = true
+  focusedPortfolioImgIdx.value = index
 }
 </script>
 
