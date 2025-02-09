@@ -1,7 +1,7 @@
 <template>
   <ul class="flex gap-6">
     <li v-for="menu in navMenus">
-      <NuxtLink :to="menu.path" class="font-semibold transition text-secondary hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
+      <NuxtLink :to="menu.path" class="font-semibold transition text-secondary hover:text-blue-600 dark:text-gray-300/50 dark:hover:text-gray-300">
         {{ menu.name }}
       </NuxtLink>
     </li>
