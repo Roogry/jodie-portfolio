@@ -157,7 +157,7 @@
             width: 0,
             height: 0, 
             padding: 0,
-            start: 'top 80%',
+            start: 'top 90%',
             end: 'bottom 40%',
           }"
           v-gsap.mobile.whenVisible.from="{ 
@@ -179,7 +179,14 @@
               y: 32
             }"
           >
-            <NuxtImg @click="showOverview(i)" :src="item" class="w-full" draggable="false" placeholder/>
+            <NuxtImg 
+              @click="showOverview(i)" 
+              :src="item" 
+              class="w-full object-cover" 
+              style="aspect-ratio: 7/5;"
+              draggable="false" 
+              placeholder
+            />
           </UCarousel>
 
           <div 

@@ -5,7 +5,8 @@
         class="p-6 max-w-[800px] w-full overflow-hidden bg-white rounded-xl sm:p-8 dark:bg-white/5"
         v-gsap.whenVisible.from="{ 
           opacity: 0,
-          start: 'top 100%',
+          width: 0,
+          start: 'top 95%',
           end: 'bottom 80%',
         }" 
       >
@@ -14,6 +15,7 @@
             class="text-lg font-semibold sm:text-xl dark:text-gray-300"
             v-gsap.whenVisible.from="{ 
               opacity: 0,
+              y: 32,
               start: 'top 100%',
               end: 'bottom 80%',
             }" 
@@ -83,7 +85,7 @@
         v-gsap.whenVisible.from="{
           opacity: 0,
           start: 'top 100%',
-          end: 'bottom 98%',
+          end: 'bottom 92%',
         }"
       >
       @ Copyright 2024 Sanchia Jodie -  Full Stack Creative Mobile and Web Developer
