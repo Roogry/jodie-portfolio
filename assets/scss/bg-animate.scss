@@ -13,6 +13,10 @@ $particleSize: 100vmax;
   position: absolute;
   backface-visibility: hidden;
   background-image: radial-gradient(#1E97FB80 0%, #1e98fb30 57%, #1e98fb00 70%);
+
+  &:is(.dark *) {
+    background-image: radial-gradient(#03549660 0%, #1E97FB07 57%, #1E97FB00 70%);
+  }
 }
 
 .particle-origin-top-left {

@@ -1,8 +1,8 @@
 <template>
   <footer class="w-screen bg-gradient-to-b from-blue-500/0 via-blue-500/5 via-30% to-blue-500/30">
-    <div class="mt-8 pb-8 px-10 flex flex-col items-center">
+    <div class="mt-8 pb-24 px-10 flex flex-col items-center sm:pb-16">
       <div v-if="!isMiniVer"
-        class="p-6 max-w-[800px] w-full overflow-hidden bg-white rounded-xl sm:p-8"
+        class="p-6 max-w-[800px] w-full overflow-hidden bg-white rounded-xl sm:p-8 dark:bg-white/5"
         v-gsap.whenVisible.from="{ 
           opacity: 0,
           start: 'top 100%',
@@ -11,7 +11,7 @@
       >
         <div class="text-center">
           <p 
-            class="text-lg font-semibold sm:text-xl"
+            class="text-lg font-semibold sm:text-xl dark:text-gray-300"
             v-gsap.whenVisible.from="{ 
               opacity: 0,
               start: 'top 100%',
@@ -19,10 +19,9 @@
             }" 
           >Drop hello through</p>
           <p 
-            class="mt-1 text-xl text-blue-500 font-semibold sm:mt-3 sm:text-3xl"
+            class="mt-1 text-xl text-blue-500 font-semibold sm:mt-3 sm:text-3xl dark:text-blue-600"
             v-gsap.whenVisible.from="{ 
               opacity: 0,
-              y: 50,
               start: 'top 100%',
               end: 'bottom 80%',
             }" 
@@ -31,8 +30,8 @@
       </div>
 
       <div v-else class="flex flex-col gap-1 items-center justify-center sm:flex-row">
-        <p class="text-base sm:text-lg sm:font-semibold">Drop hello through : </p>
-        <p class="text-lg font-semibold text-black">jodiemantra@gmail.com</p>
+        <p class="text-base sm:text-lg sm:font-semibold dark:text-gray-300">Drop hello through : </p>
+        <p class="text-lg font-semibold text-black dark:text-white">jodiemantra@gmail.com</p>
       </div>
 
       <NavMenu v-if="!isMiniVer" 
@@ -54,12 +53,12 @@
       >
         <NuxtLink to="https://www.linkedin.com/in/sanchia-jodie/">
           <div class="w-8 h-8 transition duration-200 ease-in-out hover:scale-110">
-            <i-linkedin class="text-secondary" :fontControlled="false" />
+            <i-linkedin class="text-secondary dark:text-white/80" :fontControlled="false" />
           </div>
         </NuxtLink>
         <NuxtLink to="https://www.instagram.com/sanchiajodie/">
-          <div class="w-8 h-8 p-1.5 rounded-full bg-secondary transition duration-200 ease-in-out hover:scale-110"> 
-            <i-instagram class="text-white" :fontControlled="false" />
+          <div class="w-8 h-8 p-1.5 rounded-full bg-secondary transition duration-200 ease-in-out hover:scale-110 dark:bg-white/80"> 
+            <i-instagram class="text-white dark:text-[#1C2C3A]" :fontControlled="false" />
           </div>
         </NuxtLink>
         <div>
@@ -69,18 +68,18 @@
         </div>
         <NuxtLink to="https://github.com/Roogry/roogry">
           <div class="w-8 h-8 transition duration-200 ease-in-out hover:scale-110">
-            <i-github class="text-secondary" :fontControlled="false" />
+            <i-github class="text-secondary dark:text-white/80" :fontControlled="false" />
           </div>
         </NuxtLink>
         <NuxtLink to="https://dribbble.com/Roogry">
-          <div class="w-8 h-8 p-1 rounded-full bg-secondary transition duration-200 ease-in-out hover:scale-110">
-            <i-dribbble class="text-white" :fontControlled="false" />
+          <div class="w-8 h-8 p-1 rounded-full bg-secondary transition duration-200 ease-in-out hover:scale-110 dark:bg-white/80">
+            <i-dribbble class="text-white dark:text-[#1C2C3A]" :fontControlled="false" />
           </div>
         </NuxtLink>
       </div>
 
       <p 
-        class="mt-8 text-sm text-center text-secondary sm:mt-[100px]"
+        class="mt-8 text-sm text-center text-secondary sm:mt-[100px] dark:text-gray-300"
         v-gsap.whenVisible.from="{
           opacity: 0,
           start: 'top 100%',

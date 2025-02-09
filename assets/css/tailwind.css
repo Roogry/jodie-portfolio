@@ -9,12 +9,11 @@
   }
 
   body {
-    background-color: #F9F9F9;
-    overflow-x: hidden;
+    @apply bg-[#F9F9F9] dark:bg-[#111315] overflow-x-hidden;
   }
 
   h1, h2 {
     font-family: "Rubik", sans-serif;
-    @apply text-black
+    @apply text-black;
   }
 }

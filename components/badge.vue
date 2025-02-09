@@ -17,7 +17,7 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default: "border-gray-400",
-        colored: "border-blue-300/60 bg-blue-100 text-blue-700 backdrop-blur-md",
+        colored: "border-blue-300/60 bg-blue-100 text-blue-700 backdrop-blur-md dark:bg-blue-600/20 dark:text-blue-600",
         blur: "border-gray-400/60 bg-white/50 backdrop-blur-md",
       },
     },
