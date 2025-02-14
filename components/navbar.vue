@@ -1,8 +1,8 @@
 <template>
-  <header class="p-4 fixed top-0 left-0 w-full z-50 transition-all duration-300">
-    <div class="px-5 py-3 mx-auto container rounded-xl transition-all duration-500 sm:px-8 sm:py-4"
-      :class="isFloating ? 'shadow-lg bg-[#F9F9F9]/70 backdrop-blur-md dark:bg-[#111315]/70' : 'shadow-none bg-transparent'">
-      <div class="flex items-center justify-between">
+  <header class="p-4 fixed top-0 left-0 w-full z-50 transition-all duration-300 sm:p-0">
+    <div class="px-5 py-3 rounded-xl transition-all duration-500 sm:px-8 sm:py-6 sm:w-full sm:rounded-none"
+      :class="isFloating ? 'shadow-lg bg-[#F9F9F9]/70 backdrop-blur-md dark:bg-[#111315]/70 sm:shadow-sm' : 'shadow-none bg-transparent'">
+      <div class="mx-auto container flex items-center justify-between">
         <NuxtLink v-gsap.from='{ opacity: 0 }' to="/">
           <div class="group flex gap-2 items-center">
             <i-logo class="h-6 w-6 transition text-[#7BA7CC] group-hover:text-[#4785b8] dark:text-[hsl(207,44%,50%)] dark:group-hover:text-[#91b6d4]" :fontControlled="false" />
