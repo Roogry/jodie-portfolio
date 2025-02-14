@@ -9,7 +9,7 @@
   }
 
   body {
-    @apply bg-[#F9F9F9] dark:bg-[#111315] overflow-x-hidden;
+    @apply bg-[#F9F9F9] dark:bg-[#111315] overflow-x-hidden transition-colors duration-1000;
   }
 
   h1, h2 {
