@@ -4,7 +4,7 @@
       <div class="home-container">
         <Navbar />
 
-        <div class="container min-h-[100vh] pt-4 px-8 flex flex-col items-center sm:pt-12">
+        <div class="container min-h-[100vh] pt-4 px-8 mt-[100px] flex flex-col items-center sm:pt-12">
           <div class="text-center">
             <h1 v-gsap.from='{ opacity: 0, y: 50 }' class="text-4xl font-medium lg:text-6xl leading-normal sm:text-5x dark:text-white">Crafting Digital Solutions</h1>
             <p v-gsap.from='{ opacity: 0, y: 50 }' class="mt-4 text-xl font-medium lg:text-4xl sm:mt-8 sm:text-3xl dark:text-gray-300">With Me <span class="font-bold text-blue-500">Sanchia Jodie</span></p>

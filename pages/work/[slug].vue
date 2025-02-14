@@ -2,7 +2,7 @@
   <div class="relative">
     <Navbar />
 
-    <div class="container pt-12 pb-10 min-h-screen sm:px-10">
+    <div class="container pt-12 pb-10 mt-[70px] min-h-screen sm:px-10 sm:mt-[100px]">
       <div class="grid grid-cols-1 gap-10 lg:grid-cols-5 sm:grid-cols-2">
         <div class="lg:col-span-2 sm:col-span-1">
           <div v-if="portfolio?.id" class="content">

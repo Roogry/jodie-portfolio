@@ -1,9 +1,10 @@
 <template>
   <div>
     <section id="header-section">
+      <Navbar />
+
       <div class="relative overflow-hidden">
-        <Navbar />
-        <div class="container px-8 h-[150px] flex flex-col justify-center sm:px-10 sm:h-[300px]">
+        <div class="container px-8 mt-[70px] h-[150px] flex flex-col justify-center sm:px-10 sm:mt-[100px] sm:h-[300px]">
           <h1 v-gsap.from='{ opacity: 0, x: -50 }' class="text-3xl font-medium lg:text-5xl sm:text-4xl dark:text-white">My Portfolio</h1>
           <p v-gsap.delay-100.from='{ opacity: 0, x: -50 }' class="mt-4 text-base text-secondary sm:text-xl dark:text-gray-300">Selected exciting recent of my work.</p>
         </div>
