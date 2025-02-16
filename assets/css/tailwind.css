@@ -9,7 +9,12 @@
   }
 
   body {
-    @apply bg-[#F9F9F9] dark:bg-[#111315] overflow-x-hidden transition-colors duration-1000;
+    @apply bg-[#F9F9F9] overflow-x-hidden transition-colors duration-1000;
+  }
+
+  body:after {
+    content: "";
+    @apply z-[-49] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[200vmax] h-[200vmax] scale-0 opacity-30 bg-[#111315] rounded-full transition duration-500 ease-in-out dark:scale-100 dark:opacity-100;
   }
 
   h1, h2 {
