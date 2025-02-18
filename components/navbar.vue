@@ -5,8 +5,8 @@
       <div class="mx-auto container flex items-center justify-between">
         <NuxtLink v-gsap.from='{ opacity: 0 }' to="/">
           <div class="group flex gap-2 items-center">
-            <i-logo class="h-6 w-6 transition text-[#7BA7CC] group-hover:text-[#4785b8] dark:text-[hsl(207,44%,50%)] dark:group-hover:text-[#91b6d4]" :fontControlled="false" />
-            <p class="hidden transition font-bold font-['Poppins'] sm:inline-block group-hover:text-blue-600 dark:text-gray-300/70 dark:group-hover:text-gray-300">Sanchia Jodie</p>
+            <i-logo class="h-6 w-6 transition text-[#4785b8] group-hover:text-[#6997bc] dark:text-[hsl(207,44%,50%)] dark:group-hover:text-[#91b6d4]" :fontControlled="false" />
+            <p class="hidden transition font-bold font-['Poppins'] sm:inline-block group-hover:text-[#547d9e] dark:text-gray-300/70 dark:group-hover:text-gray-300">Sanchia Jodie</p>
           </div>
         </NuxtLink>
         <nav class="items-center justify-center">

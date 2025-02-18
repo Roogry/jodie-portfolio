@@ -11,7 +11,7 @@
 <script lang="ts" setup>
 const navMenus = ref([
   // { name: 'Home', path: '/' },
-  { name: 'About', path: '/#about' },
+  { name: 'About', path: '/about' },
   // { name: 'Services', path: '/#service-section' },
   { name: 'Work', path: '/work' },
   // { name: '/images/certificates/', path: '/#certificate-section' },
