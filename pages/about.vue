@@ -9,7 +9,7 @@
             <section id="about-headline" class="px-8 sm:px-0">
               <h1 v-gsap.from='{ opacity: 0, y: 50 }' class="text-3xl font-medium lg:text-5xl sm:text-4xl dark:text-white">About Jodie</h1>
               <p v-gsap.delay-100.from='{ opacity: 0, y: 50 }' class="mt-2 font-medium text-base text-black sm:mt-3 sm:text-2xl dark:text-white">Mobile and Front End Engineer</p>
-              <p v-gsap.delay-200.from='{ opacity: 0, y: 50 }' class="mt-4 text-base text-secondary sm:mt-4 sm:text-xl dark:text-gray-400">Delivering user-centered, pixel-perfect, and scalable digital solutions to match your needs.</p>
+              <p v-gsap.delay-200.from='{ opacity: 0, y: 50 }' class="mt-4 text-base text-secondary sm:mt-4 sm:text-xl dark:text-gray-300">Delivering user-centered, pixel-perfect, and scalable digital solutions to match your needs.</p>
             </section>
 
             <section id="about-contact" class="px-8 sm:px-0">
@@ -46,7 +46,7 @@
         <div class="lg:col-span-3 sm:inline-block sm:col-span-1">
           <div class="content">
             <section id="about-desc" class="px-8 sm:px-0">
-              <p v-gsap.delay-200.from='{ opacity: 0, y: 50 }' class="text-base sm:text-xl dark:text-gray-400">
+              <p v-gsap.delay-200.from='{ opacity: 0, y: 50 }' class="text-base sm:text-xl dark:text-gray-300">
                 <b>5+ years</b> of experience, I specialize in Flutter, Angular, Nuxt.js, Laravel, and Spring Boot to create impactful digital solutions.<br/><br/>
                 Currently, I’m an <b>Application Developer at BCA</b>, maintaining and optimizing enterprise-scale systems used across <b>1,000+ branches</b>. My work focuses on modernizing legacy architectures, enhancing performance, and implementing new features to ensure seamless user experiences.<br/><br/>
                 Throughout my career, I’ve developed various digital solutions, from student organization platforms to banking applications and enterprise tools. I take pride in writing <b>clean, maintainable code</b> and continuously exploring new technologies to refine my craft.<br/><br/>
@@ -55,13 +55,13 @@
             </section>
 
             <section id="about-techs" v-gsap.delay-300.stagger.from='{ opacity: 0 }' class="px-8 sm:px-0">
-              <div class="mt-12 grid gap-y-12 gap-4 grid-cols-2 sm:grid-cols-4">
+              <div class="mt-12 grid gap-y-8 gap-4 grid-cols-2 sm:grid-cols-4">
                 <div v-for="tech in technologies" class="flex-auto technology-item">
-                  <h3 class="text-lg font-semibold text-black">{{ tech.name }}</h3>
+                  <h3 class="text-lg font-semibold text-black dark:text-white">{{ tech.name }}</h3>
                   <div v-gsap.delay-1000.stagger.from='{ opacity: 0 }' class="mt-2">
                     <p 
                       v-for="item in tech.items"
-                      class="text-lg"
+                      class="text-lg dark:text-gray-300"
                     >
                       {{ item }}
                     </p>
@@ -70,8 +70,8 @@
               </div>
             </section>
 
-            <section id="footer" class="mt-12 mb-16 px-8 sm:px-0">
-              <p class="text-xs text-secondary dark:text-gray-300">
+            <section id="footer" class="mt-16 mb-16 px-8 sm:px-0">
+              <p v-gsap.delay-1000.from='{ opacity: 0, y: 50 }' class="text-xs text-secondary dark:text-gray-300">
               @ Copyright 2024 Sanchia Jodie -  Full Stack Creative Mobile and Web Developer
               </p>
             </section>
