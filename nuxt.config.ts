@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   },
   image: {
     quality: 80,
+    loading: 'lazy',
   },
   svgo: {
     componentPrefix: 'i',

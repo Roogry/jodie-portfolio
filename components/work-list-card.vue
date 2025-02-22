@@ -9,7 +9,7 @@
       </div>
 
       <div class="h-full flex flex-col gap-3 items-center lg:flex-row sm:gap-4 ">
-        <NuxtImg class="w-full object-cover rounded-xl lg:w-[170px] lg:h-[170px]" style="aspect-ratio: 1742/1503;" :src="thumbnailPath" :alt="'Overview ' + name" :placeholder="[100]"/>
+        <NuxtImg class="w-full object-cover rounded-xl lg:w-[170px] lg:h-[170px]" style="aspect-ratio: 1742/1503;" :src="thumbnailPath" :alt="'Overview ' + name" loading="lazy" :placeholder="[100]"/>
 
         <div class="h-full w-full flex gap-1 flex-col justify-between sm:gap-4">
           <div class="work-description">

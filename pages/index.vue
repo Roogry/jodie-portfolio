@@ -11,7 +11,16 @@
           </div>
 
           <div v-gsap.from='{ autoAlpha: 0 }'>
-            <NuxtImg v-gsap.magnetic.weaker class="mt-8 aspect-video" height="281.25px" width="500px" src="/images/decorations/card-jodie.png" alt="Sanchia Jodie" :placeholder="[500, 307, 50, 5]"/>
+            <NuxtImg 
+              v-gsap.magnetic.weaker
+              class="mt-8 aspect-video"
+              height="302px" width="500px"
+              src="/images/decorations/card-jodie.png"
+              alt="Sanchia Jodie"
+              sizes="280px sm:350px md:500px"
+              loading="lazy"
+              :placeholder="[500, 302, 50, 5]"              
+            />
           </div>
           
           <p v-gsap.animateText.once class="mt-8 max-w-[600px] text-base text-secondary text-center leading-relaxed lg:text-2xl sm:text-xl dark:text-gray-400">
@@ -122,7 +131,7 @@
       </div>
     </div>
 
-    <NuxtImg class="absolute -z-30 top-0 w-full" src="/images/decorations/bg-work.png" alt="background decoration" placeholder />
+    <NuxtImg class="absolute -z-30 top-0 w-full" src="/images/decorations/bg-work.png" alt="background decoration" loading="lazy" placeholder />
   </section>
 
   <section id="certificate-section">
@@ -186,7 +195,7 @@
               class="w-full object-cover" 
               style="aspect-ratio: 7/5;"
               draggable="false" 
-              placeholder
+              loading="lazy"
             />
           </UCarousel>
 
@@ -207,7 +216,7 @@
                   style="aspect-ratio: 7/5;"
                   :src="certificate"
                   :alt="'jodie\'s certificate ' + (i + 1)"
-                  placeholder
+                  loading="lazy"
                 />
               </div>
             </div>
