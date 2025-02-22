@@ -21,4 +21,8 @@
     font-family: "Rubik", sans-serif;
     @apply text-black;
   }
+
+  .font-source-sans-3 {
+    font-family: "Source Sans 3", sans-serif;
+  }
 }

@@ -11,7 +11,7 @@
           </div>
 
           <div v-gsap.from='{ autoAlpha: 0 }'>
-            <NuxtImg v-gsap.magnetic.weaker class="mt-8 aspect-video" width="500px" src="/images/decorations/card-jodie.png" alt="Sanchia Jodie" :placeholder="[500, 307, 50, 5]"/>
+            <NuxtImg v-gsap.magnetic.weaker class="mt-8 aspect-video" height="281.25px" width="500px" src="/images/decorations/card-jodie.png" alt="Sanchia Jodie" :placeholder="[500, 307, 50, 5]"/>
           </div>
           
           <p v-gsap.animateText.once class="mt-8 max-w-[600px] text-base text-secondary text-center leading-relaxed lg:text-2xl sm:text-xl dark:text-gray-400">
@@ -122,7 +122,7 @@
       </div>
     </div>
 
-    <NuxtImg class="absolute -z-30 top-0 w-full" src="/images/decorations/bg-work.png" placeholder />
+    <NuxtImg class="absolute -z-30 top-0 w-full" src="/images/decorations/bg-work.png" alt="background decoration" placeholder />
   </section>
 
   <section id="certificate-section">
@@ -182,6 +182,7 @@
             <NuxtImg 
               @click="showOverview(i)" 
               :src="item" 
+              :alt="'jodie\'s certificate ' + (i + 1)"
               class="w-full object-cover" 
               style="aspect-ratio: 7/5;"
               draggable="false" 
@@ -204,7 +205,8 @@
                   @click="showOverview(i)"
                   class="w-full object-cover rounded-lg border border-white dark:border-blue-300/40" 
                   style="aspect-ratio: 7/5;"
-                  :src="certificate" 
+                  :src="certificate"
+                  :alt="'jodie\'s certificate ' + (i + 1)"
                   placeholder
                 />
               </div>
@@ -234,12 +236,12 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 const isOpenOverviewCertificate = ref(false)
 const focusedCertificateImgIdx = ref(0)
 const certificates = [
-  '/images/certificates/cert-frontend-expert.png',
-  '/images/certificates/cert-flutter-101.png',
-  '/images/certificates/cert-android-101.png',
-  '/images/certificates/cert-backend-js-pemula.png',
-  '/images/certificates/cert-tensorflow.png',
-  '/images/certificates/cert-git.png',
+  '/images/certificates/cert-frontend-expert.jpg',
+  '/images/certificates/cert-flutter-101.jpg',
+  '/images/certificates/cert-android-101.jpg',
+  '/images/certificates/cert-backend-js-pemula.jpg',
+  '/images/certificates/cert-tensorflow.jpg',
+  '/images/certificates/cert-git.jpg',
 ]
 
 // Template ref (gunakan tipe yang lebih spesifik jika diketahui)

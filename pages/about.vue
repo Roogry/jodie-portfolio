@@ -57,7 +57,7 @@
             <section id="about-techs" v-gsap.delay-300.stagger.from='{ opacity: 0 }' class="px-8 sm:px-0">
               <div class="mt-12 grid gap-y-8 gap-4 grid-cols-2 sm:grid-cols-4">
                 <div v-for="tech in technologies" class="flex-auto technology-item">
-                  <h3 class="text-lg font-semibold text-black dark:text-white">{{ tech.name }}</h3>
+                  <h2 class="text-lg font-semibold text-black dark:text-white font-source-sans-3">{{ tech.name }}</h2>
                   <div v-gsap.delay-1000.stagger.from='{ opacity: 0 }' class="mt-2">
                     <p 
                       v-for="item in tech.items"
