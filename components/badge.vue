@@ -19,6 +19,7 @@ const badgeVariants = cva(
         default: "border-gray-400",
         colored: "border-blue-300/60 bg-blue-100 text-blue-700 backdrop-blur-md dark:bg-blue-600/20 dark:text-blue-600",
         blur: "border-gray-400/60 bg-white/50 backdrop-blur-md",
+        linkColored: "transition duration-300 border-blue-300/60 bg-blue-100 hover:bg-blue-700  text-blue-700 hover:text-white backdrop-blur-md dark:bg-blue-600/20 dark:hover:bg-blue-600/50 dark:text-blue-600 dark:hover:text-blue-300",
       },
     },
     defaultVariants: {

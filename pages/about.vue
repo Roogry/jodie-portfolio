@@ -20,22 +20,30 @@
                 <div class="detail-item">
                   <div v-gsap.delay-500.stagger.from='{ opacity: 0 }' class="mt-3 flex flex-wrap gap-3 items-center">
                     <NuxtLink to="mailto:jodiemantra@gmail.com">
-                      <Badge variant="colored">
+                      <Badge variant="linkColored">
                         <p class="text-sm">Email</p>
                       </Badge>
                     </NuxtLink>
-                    <Badge variant="colored">
-                      <p class="text-sm">Linkedin</p>
-                    </Badge>
-                    <Badge variant="colored">
-                      <p class="text-sm">Instagram</p>
-                    </Badge>
-                    <Badge variant="colored">
-                      <p class="text-sm">Github</p>
-                    </Badge>
-                    <Badge variant="colored">
-                      <p class="text-sm">Dribbble</p>
-                    </Badge>
+                    <NuxtLink to="https://www.linkedin.com/in/sanchia-jodie">
+                      <Badge variant="linkColored">
+                        <p class="text-sm">Linkedin</p>
+                      </Badge>
+                    </NuxtLink>
+                    <NuxtLink to="https://www.instagram.com/sanchiajodie">
+                      <Badge variant="linkColored">
+                        <p class="text-sm">Instagram</p>
+                      </Badge>
+                    </NuxtLink>
+                    <NuxtLink to="https://github.com/Roogry/roogry">
+                      <Badge variant="linkColored">
+                        <p class="text-sm">Github</p>
+                      </Badge>
+                    </NuxtLink>
+                    <NuxtLink to="https://dribbble.com/Roogry">
+                      <Badge variant="linkColored">
+                        <p class="text-sm">Dribbble</p>
+                      </Badge>
+                    </NuxtLink>
                   </div>
                 </div>
               </div>
