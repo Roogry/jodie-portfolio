@@ -5,8 +5,8 @@
       <div class="mx-auto container flex items-center justify-between">
         <NuxtLink v-gsap.from='{ opacity: 0 }' to="/">
           <div class="group flex gap-2 items-center">
-            <i-logo class="h-6 w-6 transition text-[#4785b8] group-hover:text-[#6997bc] dark:text-[hsl(207,44%,50%)] dark:group-hover:text-[#91b6d4]" :fontControlled="false" />
-            <p class="hidden transition font-bold font-['Poppins'] sm:inline-block group-hover:text-[#547d9e] dark:text-gray-300/70 dark:group-hover:text-gray-300">Sanchia Jodie</p>
+            <i-logo class="h-6 w-6 transition duration-300 text-[#4785b8] group-hover:text-[#6997bc] dark:text-[hsl(207,44%,50%)] dark:group-hover:text-[#91b6d4]" :fontControlled="false" />
+            <p class="hidden transition duration-300 font-bold font-['Poppins'] sm:inline-block group-hover:text-[#547d9e] dark:text-gray-300/70 dark:group-hover:text-gray-300">Sanchia Jodie</p>
           </div>
         </NuxtLink>
         <nav class="items-center justify-center">
@@ -19,10 +19,10 @@
             color="blue"
             variant="ghost"
             aria-label="Theme"
-            class="w-8 h-8 flex-items justify-center"
+            class="w-8 h-8 flex-items justify-center transition duration-300"
             @click="isDark = !isDark"
           />
-          <NuxtLink to="/#footer" class="hidden px-5 py-2 rounded-full font-semibold text-white bg-blue-600 hover:bg-blue-800 sm:inline-block dark:bg-blue-800 dark:hover:bg-blue-700">
+          <NuxtLink to="/#footer" class="hidden px-5 py-2 rounded-full font-semibold text-white bg-blue-600 transition duration-300 hover:bg-blue-800 sm:inline-block dark:bg-blue-800 dark:hover:bg-blue-700">
             Contact Me
           </NuxtLink>
         </div>

@@ -53,24 +53,24 @@
           end: 'bottom 90%',
         }"
       >
-        <NuxtLink to="https://www.linkedin.com/in/sanchia-jodie/">
+        <NuxtLink to="https://www.linkedin.com/in/sanchia-jodie">
           <div class="w-8 h-8 transition duration-200 ease-in-out hover:scale-110">
             <i-linkedin class="text-secondary dark:text-white/80" :fontControlled="false" />
           </div>
         </NuxtLink>
-        <NuxtLink to="https://www.instagram.com/sanchiajodie/">
+        <NuxtLink to="https://www.instagram.com/sanchiajodie">
           <div class="w-8 h-8 p-1.5 rounded-full bg-secondary transition duration-200 ease-in-out hover:scale-110 dark:bg-white/80"> 
             <i-instagram class="text-white dark:text-[#1C2C3A]" :fontControlled="false" />
           </div>
         </NuxtLink>
         <div>
           <div 
-            class="w-8 h-8 p-0 m-0 flex rounded-full overflow-hidden transition-all ease-in-out duration-400 hover:scale-125 hover:animate-wiggle"
+            class="w-8 h-8 p-0 m-0 flex rounded-full overflow-hidden transition-all hover:animate-wiggle"
             variant="link"
             :class="isDark? 'bg-blue-700/70 hover:bg-blue-500/70' : 'bg-blue-500/70 hover:bg-blue-700/70'"
             @click="isDark = !isDark"
           >
-            <NuxtImg src="/images/decorations/jodie-mini.png" placeholder/>
+            <NuxtImg src="/images/decorations/jodie-mini.png" loading="lazy" placeholder/>
           </div>
         </div>
         <NuxtLink to="https://github.com/Roogry/roogry">

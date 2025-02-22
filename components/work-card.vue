@@ -1,6 +1,6 @@
 <template>
   <NuxtLink :to="'/work/' + slug"
-    class="min-w-[250px] group rounded-xl border-[.5px] bg-white/30 backdrop-blur-sm border-gray-300 hover:bg-blue-500/10 hover:border-blue-300 sm:w-full dark:bg-white/5 dark:border-white/10 dark:hover:bg-blue-500/10">
+    class="min-w-[250px] group rounded-xl border-[.5px] bg-white/30 backdrop-blur-sm border-gray-300 transition duration-300 hover:bg-blue-500/10 hover:border-blue-300 sm:w-full dark:bg-white/5 dark:border-white/10 dark:hover:bg-blue-500/10">
     <div class="h-full p-5 flex flex-col justify-between">
       <div>
         <div class="relative">
@@ -20,10 +20,10 @@
 
       <div class="font-semibold text-lg sm:text-xl">
         <div class="h-full inline-flex gap-3 items-center justify-start">
-          <p class="text-secondary group-hover:text-blue-700 dark:text-gray-400 dark:group-hover:text-blue-600">View Project</p>
+          <p class="transition duration-300 text-secondary group-hover:text-blue-700 dark:text-gray-400 dark:group-hover:text-blue-600">View Project</p>
           <span
-            class="p-1.5 border-[.5px] border-gray-300 rounded-full group-hover:border-blue-500 group-hover:bg-blue-500 dark:group-hover:border-blue-700 dark:group-hover:bg-blue-700">
-            <i-right class="w-6 h-6 text-black group-hover:text-white dark:text-gray-400" :fontControlled="false" />
+            class="p-1.5 border-[.5px] border-gray-300 rounded-full transition duration-300 group-hover:border-blue-500 group-hover:bg-blue-500 dark:group-hover:border-blue-700 dark:group-hover:bg-blue-700">
+            <i-right class="w-6 h-6 text-black transition duration-300 group-hover:text-white dark:text-gray-400" :fontControlled="false" />
           </span>
         </div>
       </div>

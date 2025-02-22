@@ -33,10 +33,10 @@
               v-gsap.desktop.delay-1000.slow.once.from='{ autoAlpha: 0, x: 10 }' 
               v-gsap.mobile.delay-1000.slow.once.from='{ autoAlpha: 0, y: 10 }' 
               to="#footer"
-              class="w-[156px] h-14 rounded-full font-semibold text-lg text-white bg-blue-600 hover:bg-blue-800 sm:w-[164px] sm:h-14 sm:text-xl dark:bg-blue-800 dark:hover:bg-blue-700">
+              class="group w-[156px] h-14 rounded-full font-semibold text-lg text-white bg-blue-600 transition duration-300 hover:bg-blue-800 sm:w-[164px] sm:h-14 sm:text-xl dark:bg-blue-800 dark:hover:bg-blue-700">
               <div class="h-full flex items-center justify-start">
                 <span class="mx-3 bg-white p-1.5 rounded-full sm:ml-3">
-                  <i-hand class="w-6 h-6 text-black" :fontControlled="false" />
+                  <i-hand class="w-6 h-6 text-black  group-hover:animate-wiggle" :fontControlled="false" />
                 </span>
                 <p>Reach Me</p>
               </div>
@@ -46,7 +46,7 @@
               v-gsap.mobile.delay-1000.slow.once.from='{ autoAlpha: 0, y: 10 }' 
               to="/documents/resume-jodie.pdf" 
               target="_blank"
-              class="w-[156px] h-14 rounded-full font-semibold text-lg text-secondary border border-secondary hover:text-white hover:bg-secondary sm:w-[164px] sm:h-14 sm:text-xl dark:border-gray-300 dark:text-gray-300 dark:border-0 dark:bg-white/10 dark:hover:bg-white/15"
+              class="w-[156px] h-14 rounded-full font-semibold text-lg text-secondary border border-secondary transition duration-300 hover:text-white hover:bg-secondary sm:w-[164px] sm:h-14 sm:text-xl dark:border-gray-300 dark:text-gray-300 dark:border-0 dark:bg-white/10 dark:hover:bg-white/15"
             >
               <div class="h-full flex items-center justify-center">Download CV</div>
             </NuxtLink>
@@ -100,7 +100,7 @@
             start: 'top 90%',
             end: 'bottom 10%', 
           }"
-          class="shrink-0 py-3 rounded-full font-semibold text-base text-white bg-blue-600 hover:bg-blue-800 sm:h-14 sm:text-xl dark:bg-blue-800 dark:hover:bg-blue-700">
+          class="shrink-0 py-3 rounded-full font-semibold text-base text-white bg-blue-600 transition duration-300 hover:bg-blue-800 sm:h-14 sm:text-xl dark:bg-blue-800 dark:hover:bg-blue-700">
           <div class="h-full flex items-center justify-start">
             <p class="ml-4 sm:ml-5">Discover All</p>
             <span class="mx-3 bg-white p-1.5 rounded-full">

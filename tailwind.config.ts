@@ -34,8 +34,8 @@ export default <Partial<Config>> {
       },
       keyframes: {
         wiggle: {
-          '0%, 100%': { transform: 'rotate(-3deg)' },
-          '50%': { transform: 'rotate(3deg)' },
+          '0%, 90%, 100%': { transform: 'rotate(0)' },
+          '30%': { transform: 'rotate(12deg)' },
         }
       },
       animation: {
