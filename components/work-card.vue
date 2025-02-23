@@ -1,6 +1,6 @@
 <template>
   <NuxtLink :to="'/work/' + slug"
-    class="min-w-[250px] group rounded-xl border-[.5px] bg-white/30 backdrop-blur-sm border-gray-300 transition duration-300 hover:bg-blue-500/10 hover:border-blue-300 sm:w-full dark:bg-white/5 dark:border-white/10 dark:hover:bg-blue-500/10">
+    class="min-w-[250px] group rounded-xl border-[.5px] bg-white/30 backdrop-blur-sm border-gray-300 transition-colors duration-300 hover:bg-blue-500/10 hover:border-blue-300 sm:w-full dark:bg-white/5 dark:border-white/10 dark:hover:bg-blue-500/10">
     <div class="h-full p-5 flex flex-col justify-between">
       <div>
         <div class="relative">
