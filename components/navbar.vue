@@ -19,7 +19,7 @@
             color="blue"
             variant="ghost"
             aria-label="Theme"
-            class="w-8 h-8 flex-items justify-center transition duration-300"
+            class="w-8 h-8 flex-items justify-center transition-colors duration-300"
             @click="isDark = !isDark"
           />
           <NuxtLink to="/#footer" class="hidden px-5 py-2 rounded-full font-semibold text-white bg-blue-600 transition-colors duration-300 hover:bg-blue-800 sm:inline-block dark:bg-blue-800 dark:hover:bg-blue-700">
