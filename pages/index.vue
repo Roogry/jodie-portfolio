@@ -140,7 +140,13 @@
       </div>
     </div>
 
-    <NuxtImg class="absolute -z-30 top-0 w-full" src="/images/decorations/bg-work.png" alt="background decoration" loading="lazy" placeholder />
+    <div v-gsap.parallax.slower-10 class="particle-half-circular !w-[50vmin] !h-[20vmin] top-28 left-1/2 -translate-x-1/2"></div>
+    <div v-gsap.parallax.slower-10 class="-z-20 absolute top-1/2 -left-32 w-[50vmin] h-[20vmin]">
+      <div class="particle-half-circular rotate-[-115deg] size-full"></div>
+    </div>
+    <div v-gsap.parallax.slower-10 class="-z-20 absolute bottom-0 -right-32 w-[50vmin] h-[20vmin]">
+      <div class="particle-half-circular rotate-[115deg] size-full"></div>
+    </div>
   </section>
 
   <section id="certificate-section">

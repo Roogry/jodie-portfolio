@@ -19,6 +19,19 @@ $particleSize: 100vmax;
   }
 }
 
+.particle-half-circular {
+  z-index: -20;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 9999px 9999px 0 0;
+  background: #1e98fb44;
+  filter: blur(50px);
+
+  &:is(.dark *) {
+    background: #03549660;
+  }
+}
+
 .particle-origin-top-left {
   transform-origin: 60% 40%;
   animation-duration: calc(math.random(6 * 10) / 10) * 1s + 5s;
