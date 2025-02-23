@@ -6,21 +6,30 @@
 
         <div class="container min-h-[100vh] pt-4 px-8 mt-[100px] flex flex-col items-center sm:pt-12">
           <div class="text-center">
-            <h1 v-gsap.from='{ opacity: 0, y: 50 }' class="text-4xl font-medium lg:text-6xl leading-normal sm:text-5x dark:text-white">Crafting Digital Solutions</h1>
-            <p v-gsap.from='{ opacity: 0, y: 50 }' class="mt-4 text-xl font-medium lg:text-4xl sm:mt-8 sm:text-3xl dark:text-gray-300">With Me <span class="font-bold text-blue-500">Sanchia Jodie</span></p>
+            <h1 v-gsap.to='{ autoAlpha: 1, y: 0 }' class="text-4xl font-medium leading-normal opacity-0 translate-y-36 sm:text-5xl lg:text-6xl dark:text-white">Crafting Digital Solutions</h1>
+            <p v-gsap.to='{ autoAlpha: 1, y: 0 }' class="mt-4 text-xl font-medium opacity-0 translate-y-36 lg:text-4xl sm:mt-8 sm:text-3xl dark:text-gray-300">With Me <span class="font-bold text-blue-500">Sanchia Jodie</span></p>
           </div>
 
-          <div v-gsap.from='{ autoAlpha: 0 }'>
-            <NuxtImg 
-              v-gsap.magnetic.weaker
-              class="mt-8 aspect-video"
-              height="302px" width="500px"
-              src="/images/decorations/card-jodie.png"
-              alt="Sanchia Jodie"
-              sizes="280px sm:350px md:500px"
-              loading="lazy"
-              :placeholder="[500, 302, 50, 5]"              
-            />
+          <div v-gsap.to='{ autoAlpha: 1 }' class="relative mt-8 w-[500px] max-w-full aspect-[587/328] opacity-0">
+            <div class="absolute bottom-0 w-full aspect-[587/306]">
+              <div v-gsap.desktop.magnetic class="absolute top-1/2 left-0 -translate-y-1/2 w-full aspect-[587/274]">
+                <div class="w-full h-full rounded-2xl bg-blue-600/30 backdrop-blur-md"></div>
+              </div>
+              <div v-gsap.desktop.magnetic.stronger class="absolute top-0 left-1/2 -translate-x-1/2 h-full aspect-[557/306]">
+                <div class="w-full h-full rounded-2xl bg-blue-600"></div>
+              </div>
+            </div>
+            <div 
+              v-gsap.desktop.magnetic.stronger 
+              class="absolute h-full w-full">
+              <NuxtImg 
+                src="/images/decorations/jodie-main.png"
+                alt="Professional Sanchia Jodie Portrait"
+                class="absolute bottom-0 left-1/2 -translate-x-1/2 h-full aspect-[13/14] origin-bottom"
+                loading="lazy"
+                placeholder          
+              />
+            </div>
           </div>
           
           <p v-gsap.animateText.once class="mt-8 max-w-[600px] text-base text-secondary text-center leading-relaxed lg:text-2xl sm:text-xl dark:text-gray-400">
@@ -30,10 +39,10 @@
 
           <div class="mt-8 flex flex-col-reverse gap-4 items-center justify-center sm:flex-row">
             <NuxtLink 
-              v-gsap.desktop.delay-1000.slow.once.from='{ autoAlpha: 0, x: 10 }' 
-              v-gsap.mobile.delay-1000.slow.once.from='{ autoAlpha: 0, y: 10 }' 
+              v-gsap.desktop.delay-1000.slow.once.to='{ autoAlpha: 1, x: 0, y: 0 }' 
+              v-gsap.mobile.delay-1000.slow.once.to='{ autoAlpha: 1, x: 0, y: 0 }' 
               to="#footer"
-              class="group w-[156px] h-14 rounded-full font-semibold text-lg text-white bg-blue-600 transition duration-300 hover:bg-blue-800 sm:w-[164px] sm:h-14 sm:text-xl dark:bg-blue-800 dark:hover:bg-blue-700">
+              class="group w-[156px] h-14 rounded-full font-semibold text-lg text-white bg-blue-600 transition-colors duration-300 opacity-0 translate-x-0 translate-y-4 sm:translate-x-4 sm:translate-y-0 hover:bg-blue-800 sm:w-[164px] sm:h-14 sm:text-xl dark:bg-blue-800 dark:hover:bg-blue-700">
               <div class="h-full flex items-center justify-start">
                 <span class="mx-3 bg-white p-1.5 rounded-full sm:ml-3">
                   <i-hand class="w-6 h-6 text-black  group-hover:animate-wiggle" :fontControlled="false" />
@@ -42,11 +51,11 @@
               </div>
             </NuxtLink>
             <NuxtLink 
-              v-gsap.desktop.delay-1000.slow.once.from='{ autoAlpha: 0, x: -10 }' 
-              v-gsap.mobile.delay-1000.slow.once.from='{ autoAlpha: 0, y: 10 }' 
+              v-gsap.desktop.delay-1000.slow.once.to='{ autoAlpha: 1, x: 0 }' 
+              v-gsap.mobile.delay-1000.slow.once.to='{ autoAlpha: 1, y: 0 }' 
               to="/documents/resume-jodie.pdf" 
               target="_blank"
-              class="w-[156px] h-14 rounded-full font-semibold text-lg text-secondary border border-secondary transition duration-300 hover:text-white hover:bg-secondary sm:w-[164px] sm:h-14 sm:text-xl dark:border-gray-300 dark:text-gray-300 dark:border-0 dark:bg-white/10 dark:hover:bg-white/15"
+              class="w-[156px] h-14 rounded-full font-semibold text-lg text-secondary border border-secondary transition-colors duration-300 opacity-0 translate-x-0 translate-y-4 sm:-translate-x-4 sm:translate-y-0 hover:text-white hover:bg-secondary sm:w-[164px] sm:h-14 sm:text-xl dark:border-gray-300 dark:text-gray-300 dark:border-0 dark:bg-white/10 dark:hover:bg-white/15"
             >
               <div class="h-full flex items-center justify-center">Download CV</div>
             </NuxtLink>
