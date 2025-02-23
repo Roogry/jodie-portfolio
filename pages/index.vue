@@ -140,12 +140,12 @@
       </div>
     </div>
 
-    <div v-gsap.parallax.slower-10 class="particle-half-circular !w-[50vmin] !h-[20vmin] top-28 left-1/2 -translate-x-1/2"></div>
-    <div v-gsap.parallax.slower-10 class="-z-20 absolute top-1/2 -left-32 w-[50vmin] h-[20vmin]">
-      <div class="particle-half-circular rotate-[-115deg] size-full"></div>
+    <div v-gsap.parallax.slower-10 class="particle-half-circular w-[70vmin] h-[30vmin] top-12 left-3/4 blur-xl sm:top-28 sm:w-[50vmin] sm:h-[20vmin] sm:left-1/2 sm:-translate-x-1/2 sm:blur-3xl"></div>
+    <div v-gsap.parallax.slower-10 class="-z-20 absolute top-1/2 -left-32 w-[70vmin] h-[30vmin] blur-xl sm:-left-32 sm:w-[50vmin] sm:h-[20vmin] sm:blur-3xl">
+      <div class="particle-half-circular rotate-[-145deg] size-full"></div>
     </div>
-    <div v-gsap.parallax.slower-10 class="-z-20 absolute bottom-0 -right-32 w-[50vmin] h-[20vmin]">
-      <div class="particle-half-circular rotate-[115deg] size-full"></div>
+    <div v-gsap.parallax.slower-10 class="-z-20 absolute -bottom-16 -right-32 w-[70vmin] h-[30vmin] blur-xl sm:-right-32 sm:bottom-0 sm:w-[50vmin] sm:h-[20vmin] sm:blur-3xl">
+      <div class="particle-half-circular rotate-[145deg] size-full"></div>
     </div>
   </section>
 

@@ -25,7 +25,6 @@ $particleSize: 100vmax;
   backface-visibility: hidden;
   border-radius: 9999px 9999px 0 0;
   background: #1e98fb44;
-  filter: blur(50px);
 
   &:is(.dark *) {
     background: #03549660;
