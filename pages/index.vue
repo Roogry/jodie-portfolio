@@ -109,7 +109,7 @@
             start: 'top 90%',
             end: 'bottom 10%', 
           }"
-          class="shrink-0 py-3 rounded-full font-semibold text-base text-white bg-blue-600 transition duration-300 hover:bg-blue-800 sm:h-14 sm:text-xl dark:bg-blue-800 dark:hover:bg-blue-700">
+          class="shrink-0 py-3 rounded-full font-semibold text-base text-white bg-blue-600 transition-colors duration-300 hover:bg-blue-800 sm:h-14 sm:text-xl dark:bg-blue-800 dark:hover:bg-blue-700">
           <div class="h-full flex items-center justify-start">
             <p class="ml-4 sm:ml-5">Discover All</p>
             <span class="mx-3 bg-white p-1.5 rounded-full">
