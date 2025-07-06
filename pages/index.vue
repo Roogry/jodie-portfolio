@@ -150,7 +150,7 @@
   </section>
 
   <section id="certificate-section">
-    <div class="container h-[60vh] px-8 pt-[50px] mb-0 sm:h-screen sm:px-10 sm:pt-[100px] sm:mb-8">
+    <div class="container min-h-[60vh] px-8 pt-[50px] mb-[60px] sm:min-h-screen sm:px-10 sm:pt-[100px] sm:mb-[120px]">
       <div class="text-center">
         <h1 
           v-gsap.whenVisible.from="{ 
