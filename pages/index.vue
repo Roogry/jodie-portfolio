@@ -32,9 +32,7 @@
             </div>
           </div>
           
-          <p v-gsap.animateText.once class="mt-8 max-w-[600px] text-base text-secondary text-center leading-relaxed lg:text-2xl sm:text-xl dark:text-gray-400">
-            I’m a Full Stack Creative Mobile and Web Developer. Delivering
-            top-notch digital solutions to match your needs.
+          <p v-gsap.entrance.animateText="'I\'m a Full Stack Creative Mobile and Web Developer. Delivering top-notch digital solutions to match your needs.'" class="mt-8 max-w-[600px] text-base text-secondary text-center leading-relaxed lg:text-2xl sm:text-xl dark:text-gray-400">
           </p>
 
           <div class="mt-8 flex flex-col-reverse gap-4 items-center justify-center sm:flex-row">

@@ -2,18 +2,18 @@
   <header class="p-4 fixed top-0 left-0 w-full z-50 transition-all duration-300 sm:p-0">
     <div class="px-5 py-3 rounded-xl transition-all duration-500 sm:px-8 sm:py-6 sm:w-full sm:rounded-none"
       :class="isFloating ? 'shadow-lg bg-[#F9F9F9]/70 backdrop-blur-md dark:bg-[#111315]/70 sm:shadow-sm' : 'shadow-none bg-transparent'">
-      <div class="mx-auto container flex items-center justify-between">
-        <NuxtLink v-gsap.from='{ opacity: 0 }' to="/">
+      <div v-gsap.delay-1000.stagger.to="{ autoAlpha: 1 }" class="mx-auto container flex items-center justify-between">
+        <NuxtLink to="/" class="opacity-0">
           <div class="group flex gap-2 items-center">
             <i-logo class="h-6 w-6 transition duration-300 text-[#4785b8] group-hover:text-[#6997bc] dark:text-[hsl(207,44%,50%)] dark:group-hover:text-[#91b6d4]" :fontControlled="false" />
             <p class="hidden transition duration-300 font-bold font-['Poppins'] sm:inline-block group-hover:text-[#547d9e] dark:text-gray-300/70 dark:group-hover:text-gray-300">Sanchia Jodie</p>
           </div>
         </NuxtLink>
-        <nav class="items-center justify-center">
-          <NavMenu v-gsap.delay-500.stagger.from="{ opacity: 0 }" />
+        <nav class="opacity-0 items-center justify-center">
+          <NavMenu />
         </nav>
 
-        <div v-gsap.delay-1000.stagger.from="{ opacity: 0 }" class="flex items-center gap-4">
+        <div class="opacity-0 flex items-center gap-4">
           <UButton
             :icon="isDark ? 'i-heroicons-moon-20-solid' : 'i-heroicons-sun-20-solid'"
             color="blue"
