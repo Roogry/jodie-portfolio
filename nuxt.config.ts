@@ -43,15 +43,15 @@ export default defineNuxtConfig({
         { property: "og:type", content: "website" },
         { property: "og:title", content: "Sanchia Jodie - Full Stack Creative Mobile and Web Developer" },
         { property: "og:description", content: "Explore the portfolio of Sanchia Jodie, showcasing expertise in developing scalable, user-centered web and mobile applications using cutting-edge technologies like Flutter, Laravel, and AI." },
-        { property: "og:url", content: "https://yourwebsite.com" },
-        { property: "og:image", content: "https://yourwebsite.com/your-portfolio-image.jpg" },
+        { property: "og:url", content: "https://jodie-portfolio.vercel.app" },
+        { property: "og:image", content: "https://jodie-portfolio.vercel.app/images/decorations/card-jodie.png" },
         { property: "og:site_name", content: "Sanchia Jodie's Portfolio" },
 
         // Twitter Card Meta Tags
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: "Sanchia Jodie - Full Stack Creative Mobile and Web Developer" },
         { name: "twitter:description", content: "See Sanchia Jodie's projects in web, mobile, and backend development, focusing on scalable, user-centered solutions." },
-        { name: "twitter:image", content: "https://yourwebsite.com/your-portfolio-image.jpg" },
+        { name: "twitter:image", content: "https://jodie-portfolio.vercel.app/images/decorations/card-jodie.png" },
 
         // Theme Color
         { name: "theme-color", content: "#ffffff" }, // Theme color
@@ -78,9 +78,6 @@ export default defineNuxtConfig({
         { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
         { rel: "icon", type: "image/png", sizes: "96x96", href: "/favicon-96x96.png" },
         { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
-
-        // Manifest
-        { rel: "manifest", href: "/manifest.json" },
       ]
     }
   }
