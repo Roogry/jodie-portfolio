@@ -88,7 +88,7 @@ export const portfoliosData: Portfolio[] = [
     techs: ['Laravel', 'Livewire', 'Bootstrap', 'Git'],
     slug: 'management-attendance-and-sales-reporting-system',
     thumbnailPath: '/images/portfolios/pertashop/thumb.jpg',
-    visitUrl: null,
+    visitUrl: 'https://catursarips.id',
     studyCase: 'A retail fuel company struggled with managing daily attendance, sales reports, and restocking processes as staff relied on chat-based reporting. This approach led to scattered information, miscommunication, and inefficiencies in consolidating data for decision-making.<br><br>The Management Attendance and Sales Reporting System was developed to centralize these workflows into a single digital platform. Field staff can now log attendance, record daily sales, and update restocking details directly in the system, while managers access real-time consolidated reports through a user-friendly dashboard. This streamlined solution improved data accuracy, operational efficiency, and decision-making processes.',
     images: [
       '/images/portfolios/pertashop/thumb.jpg',
